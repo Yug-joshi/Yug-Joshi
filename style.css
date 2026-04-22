@@ -17,6 +17,10 @@ body {
     font-family: 'Inter', sans-serif;
 }
 
+p {
+    line-height: 1.7;
+}
+
 .font-headline {
     font-family: 'Plus Jakarta Sans', sans-serif;
 }
@@ -115,6 +119,16 @@ body {
     transform: translateY(-6px);
     border-color: rgba(164, 230, 255, 0.4);
     box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+}
+
+.cinematic-shadow {
+    box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.7), 0 18px 36px -18px rgba(0, 0, 0, 0.75);
+}
+
+.magnetic-btn {
+    display: inline-block;
+    transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+    will-change: transform;
 }
 
 button:focus-visible,

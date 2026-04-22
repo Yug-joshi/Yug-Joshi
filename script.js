@@ -1,5 +1,143 @@
-// Application Logic
 document.addEventListener('DOMContentLoaded', () => {
+    // Project Data for Modal
+    const projectData = {
+        'trade-allocation': {
+            title: 'Trade Allocation Platform',
+            tag: 'Live Production Build',
+            description: 'A live, production-grade broker-client management system architected for real-world scaling. This platform manages complex trade executions, real-time client ledgers, and secure administrative workflows.',
+            tech: ['MONGODB', 'REACT', 'NODE.JS', 'EXPRESS'],
+            media: [
+                { type: 'image', src: 'trade1.png' },
+                { type: 'image', src: 'trade2.png' }
+            ],
+            live: '#',
+            repo: 'https://github.com/Yug-joshi'
+        },
+        'stockpulse': {
+            title: 'Stock Pulse CRM',
+            tag: 'Full-Stack Solution',
+            description: 'A high-performance CRM platform combining advanced client management with real-time stock tracking tailored for local business operations. Features advanced data visualization and client relationship mapping.',
+            tech: ['MERN STACK', 'REDUX', 'CHART.JS'],
+            media: [
+                { type: 'video', src: 'stock.mp4' },
+                { type: 'image', src: 'stock.png' }
+            ],
+            live: 'https://dhanicontrol.vercel.app/',
+            repo: 'https://github.com/Yug-joshi/StockPulse.git'
+        },
+        'edudoc': {
+            title: 'EduDoc App',
+            tag: 'Mobile Architecture',
+            description: 'A cross-platform mobile application developed with Flutter and Supabase. I implemented a custom token-based economy for document sharing, alongside robust bookmarking and secure authentication flows.',
+            tech: ['FLUTTER', 'SUPABASE', 'DART'],
+            media: [
+                { type: 'image', src: 'edudoc2.jpg' },
+                { type: 'image', src: 'edudoc3.jpg' },
+                { type: 'image', src: 'edudoc4.jpg' }
+            ],
+            live: 'https://github.com/shwetajadhav0230-ux/edudoc_app_mdv.git',
+            repo: 'https://github.com/shwetajadhav0230-ux/edudoc_app_mdv.git'
+        }
+    };
+
+    let currentMediaIndex = 0;
+    let currentProjectMedia = [];
+
+    // Modal Global Functions
+    window.openProjectModal = function(projectId, extraData = null) {
+        let project = projectData[projectId];
+
+        if (!project && extraData) {
+            project = {
+                title: extraData.name.replace(/-/g, ' '),
+                tag: 'In-Depth Walkthrough Placeholder',
+                description: extraData.description || 'Technical architecture overview including system design and logic implementation.',
+                tech: [extraData.language || 'Software Engineering'],
+                media: [{ type: 'image', src: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=1200' }],
+                live: extraData.html_url,
+                repo: extraData.html_url
+            };
+        }
+
+        if (!project) return;
+
+        const modal = document.getElementById('project-modal');
+        const title = document.getElementById('modal-title');
+        const tag = document.getElementById('modal-tag');
+        const desc = document.getElementById('modal-description');
+        const techStack = document.getElementById('modal-tech-stack');
+        const liveLink = document.getElementById('modal-live-link');
+        const repoLink = document.getElementById('modal-repo-link');
+
+        // Populate Info
+        title.innerText = project.title;
+        tag.innerText = project.tag;
+        desc.innerText = project.description;
+        liveLink.href = project.live;
+        repoLink.href = project.repo;
+
+        // Populate Tech
+        techStack.innerHTML = '';
+        project.tech.forEach(t => {
+            const span = document.createElement('span');
+            span.className = 'text-primary text-[10px] font-mono border border-primary/20 px-2 py-1 rounded bg-primary/5';
+            span.innerText = t;
+            techStack.appendChild(span);
+        });
+
+        // Setup Media
+        currentProjectMedia = project.media;
+        currentMediaIndex = 0;
+        updateModalMedia();
+
+        modal.classList.remove('hidden');
+        setTimeout(() => modal.classList.add('show'), 10);
+        document.body.classList.add('modal-open');
+    };
+
+    function updateModalMedia() {
+        const container = document.getElementById('modal-media-container');
+        const media = currentProjectMedia[currentMediaIndex];
+        const nav = document.getElementById('modal-nav-container');
+
+        nav.style.display = currentProjectMedia.length > 1 ? 'flex' : 'none';
+        container.innerHTML = '';
+
+        if (media.type === 'image') {
+            container.innerHTML = `<img src="${media.src}" style="max-height: 80vh; max-width: 100%; object-fit: contain;" class="modal-media-item p-4" alt="Preview">`;
+        } else if (media.type === 'video') {
+            container.innerHTML = `<video src="${media.src}" style="max-height: 80vh; max-width: 100%; object-fit: contain;" class="modal-media-item p-4" controls autoplay muted loop></video>`;
+        }
+    }
+
+    const modal = document.getElementById('project-modal');
+    const closeBtn = document.getElementById('close-modal');
+    const overlay = document.getElementById('modal-overlay');
+
+    function closeModal() {
+        modal.classList.remove('show');
+        setTimeout(() => modal.classList.add('hidden'), 400);
+        document.body.classList.remove('modal-open');
+    }
+
+    closeBtn.addEventListener('click', closeModal);
+    overlay.addEventListener('click', closeModal);
+
+    document.getElementById('modal-prev').addEventListener('click', () => {
+        currentMediaIndex = (currentMediaIndex - 1 + currentProjectMedia.length) % currentProjectMedia.length;
+        updateModalMedia();
+    });
+
+    document.getElementById('modal-next').addEventListener('click', () => {
+        currentMediaIndex = (currentMediaIndex + 1) % currentProjectMedia.length;
+        updateModalMedia();
+    });
+
+    // Handle Escape Key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeModal();
+    });
+
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.nav-link');
     const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
@@ -58,7 +196,10 @@ document.addEventListener('DOMContentLoaded', () => {
             container.innerHTML = '';
 
             const featured = ['EduDoc', 'Trade-Allocation', 'Artego-CRM'];
-            const filteredRepos = repos.filter(repo => !featured.includes(repo.name)).slice(0, 6);
+            const excluded = ['Artemis', 'Swasthya-Mitra', 'portfolio', 'Yug-Joshi'];
+            const filteredRepos = repos.filter(repo => 
+                !featured.includes(repo.name) && !excluded.includes(repo.name)
+            ).slice(0, 6);
 
             if (filteredRepos.length === 0) {
                 container.innerHTML = '<p class="col-span-full text-on-surface-variant text-center opacity-50 py-10">Archive successfully synchronized. No additional public repositories to display.</p>';
@@ -72,6 +213,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 card.rel = 'noopener noreferrer';
                 card.className = 'block group p-8 bg-surface-container rounded-xl border border-outline-variant/10 hover:border-primary/40 transition-all duration-300 flex flex-col justify-between hover:translate-y-[-4px] shadow-sm card-hover cursor-pointer';
                 card.style.animationDelay = `${index * 50}ms`;
+                card.onclick = (e) => {
+                    e.preventDefault();
+                    openProjectModal(repo.name, repo);
+                };
 
                 const lang = repo.language || 'Code';
                 const year = new Date(repo.updated_at).getFullYear();
@@ -160,19 +305,33 @@ document.addEventListener('DOMContentLoaded', () => {
         window.addEventListener('resize', updateCarousel);
     }
 
-    initCarousel('stock-carousel', 5000);
+    initCarousel('featured-carousel', 5000);
     initCarousel('edudoc-carousel', 5000);
 
-    const stockVideo = document.getElementById('stock-video');
-    if (stockVideo) {
-        stockVideo.addEventListener('loadedmetadata', () => {
-            stockVideo.currentTime = 5;
+    const featuredVideo = document.getElementById('featured-video');
+    if (featuredVideo) {
+        featuredVideo.addEventListener('loadedmetadata', () => {
+            featuredVideo.currentTime = 5;
         });
 
-        stockVideo.addEventListener('timeupdate', () => {
-            if (stockVideo.currentTime >= 10) {
-                stockVideo.currentTime = 5;
+        featuredVideo.addEventListener('timeupdate', () => {
+            if (featuredVideo.currentTime >= 10) {
+                featuredVideo.currentTime = 5;
             }
         });
     }
+
+    // Magnetic Hover Effect
+    const magneticBtns = document.querySelectorAll('.magnetic-btn');
+    magneticBtns.forEach(btn => {
+        btn.addEventListener('mousemove', (e) => {
+            const rect = btn.getBoundingClientRect();
+            const x = e.clientX - rect.left - rect.width / 2;
+            const y = e.clientY - rect.top - rect.height / 2;
+            btn.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
+        });
+        btn.addEventListener('mouseleave', () => {
+            btn.style.transform = 'translate(0, 0)';
+        });
+    });
 });
