@@ -13,6 +13,7 @@
     <meta property="og:type" content="website">
 
     <title>Yug Joshi | Full-Stack Developer Portfolio</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23131313'/><rect width='100' height='100' rx='20' fill='none' stroke='%23a4e6ff' stroke-width='4'/><text fill='%23a4e6ff' font-family='sans-serif' font-weight='900' font-size='50' x='50' y='68' text-anchor='middle'>YJ</text></svg>">
 
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <script>
@@ -119,10 +120,13 @@
 
     <nav id="main-nav" class="fixed top-0 w-full z-50 glass-nav" role="navigation" aria-label="Main navigation">
         <div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
-            <a href="#home"
-                class="text-xl font-bold text-[#a4e6ff] font-headline tracking-tighter hover:opacity-80 transition-opacity"
-                aria-label="Yug Joshi - Home">
-                Yug Joshi
+            <a href="#home" class="text-on-surface font-bold text-2xl font-headline tracking-tighter hover:scale-105 transition-transform flex items-center gap-2 group">
+                <svg width="36" height="36" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" class="text-primary group-hover:rotate-6 transition-transform duration-500">
+                    <rect width="100" height="100" rx="20" fill="#131313"/>
+                    <rect width="100" height="100" rx="20" fill="none" stroke="currentColor" stroke-width="6"/>
+                    <text fill="currentColor" font-family="sans-serif" font-weight="900" font-size="50" x="50" y="68" text-anchor="middle">YJ</text>
+                </svg>
+                <span>Yug<span class="text-primary">.</span></span>
             </a>
             <div class="hidden md:flex gap-8 items-center">
                 <a class="nav-link text-[#e5e2e1] hover:text-[#a4e6ff] transition-colors font-headline tracking-tighter active"
@@ -750,9 +754,14 @@
     <footer class="w-full py-12 bg-[#0e0e0e] border-t border-outline-variant/10">
         <div class="flex flex-col md:flex-row justify-between items-center px-8 max-w-7xl mx-auto gap-8">
             <div class="flex flex-col items-center md:items-start gap-2">
-                <a href="#home"
-                    class="text-[#a4e6ff] font-bold text-xl font-headline hover:opacity-80 transition-opacity">Yug
-                    Joshi</a>
+                <a href="#home" class="text-[#a4e6ff] font-bold text-xl font-headline hover:opacity-80 transition-opacity flex items-center gap-2">
+                    <svg width="28" height="28" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="100" height="100" rx="20" fill="#131313"/>
+                        <rect width="100" height="100" rx="20" fill="none" stroke="currentColor" stroke-width="6"/>
+                        <text fill="currentColor" font-family="sans-serif" font-weight="900" font-size="50" x="50" y="68" text-anchor="middle">YJ</text>
+                    </svg>
+                    Yug Joshi
+                </a>
                 <p class="text-[#e5e2e1]/60 font-body text-sm">© 2026 Yug Joshi. Built with Precision.</p>
             </div>
             <div class="flex gap-8">
