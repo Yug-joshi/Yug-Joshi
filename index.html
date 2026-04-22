@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta name="theme-color" content="#131313" />
+    <meta name="description"
+        content="Yug Joshi — BSc.IT Graduate, Full-Stack Developer specializing in Flutter, MERN stack, and Python. View projects, technical stack, and get in touch.">
+    <meta name="keywords" content="Developer, Full-Stack, Flutter, MERN, React, Python, Portfolio">
+    <meta property="og:title" content="Yug Joshi | Full-Stack Developer Portfolio">
+    <meta property="og:description" content="Building digital experiences with precision and performance.">
+    <meta property="og:type" content="website">
+
+    <title>Yug Joshi | Full-Stack Developer Portfolio</title>
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "secondary-fixed": "#d8e2ff",
+                        "tertiary-fixed-dim": "#eec200",
+                        "primary-fixed-dim": "#4cd6ff",
+                        "on-error": "#690005",
+                        "tertiary-fixed": "#ffe083",
+                        "on-tertiary-fixed": "#231b00",
+                        "surface": "#131313",
+                        "secondary-fixed-dim": "#adc6ff",
+                        "surface-container-high": "#2a2a2a",
+                        "surface-bright": "#3a3939",
+                        "secondary": "#adc6ff",
+                        "on-primary-fixed": "#001f28",
+                        "secondary-container": "#0566d9",
+                        "primary-container": "#00d1ff",
+                        "error": "#ffb4ab",
+                        "surface-container-low": "#1c1b1b",
+                        "error-container": "#93000a",
+                        "on-tertiary": "#3c2f00",
+                        "outline-variant": "#3c494e",
+                        "on-primary": "#003543",
+                        "surface-dim": "#131313",
+                        "inverse-surface": "#e5e2e1",
+                        "tertiary": "#ffd95f",
+                        "on-surface": "#e5e2e1",
+                        "on-secondary-fixed": "#001a42",
+                        "surface-container-highest": "#353534",
+                        "inverse-primary": "#00677f",
+                        "primary": "#a4e6ff",
+                        "surface-container": "#201f1f",
+                        "on-tertiary-container": "#604c00",
+                        "background": "#131313",
+                        "surface-variant": "#353534",
+                        "on-primary-fixed-variant": "#004e60",
+                        "primary-fixed": "#b7eaff",
+                        "tertiary-container": "#e7bc00",
+                        "outline": "#859399",
+                        "on-secondary-container": "#e6ecff",
+                        "on-background": "#e5e2e1",
+                        "on-error-container": "#ffdad6",
+                        "inverse-on-surface": "#313030",
+                        "surface-tint": "#4cd6ff",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-secondary-fixed-variant": "#004395",
+                        "on-secondary": "#002e6a",
+                        "on-surface-variant": "#bbc9cf",
+                        "on-tertiary-fixed-variant": "#574500",
+                        "on-primary-container": "#00566a"
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.125rem",
+                        lg: "0.25rem",
+                        xl: "0.5rem",
+                        full: "0.75rem"
+                    },
+                    fontFamily: {
+                        headline: ["Plus Jakarta Sans"],
+                        body: ["Inter"],
+                        label: ["Inter"]
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.6s ease-out',
+                        'slide-up': 'slideUp 0.6s ease-out',
+                        'pulse-glow': 'pulseGlow 2s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' }
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' }
+                        },
+                        pulseGlow: {
+                            '0%, 100%': { boxShadow: '0 0 0 0 rgba(164, 230, 255, 0.7)' },
+                            '50%': { boxShadow: '0 0 0 10px rgba(164, 230, 255, 0)' }
+                        }
+                    }
+                },
+            },
+        }
+    </script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+
+
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body class="bg-surface text-on-surface font-body selection:bg-primary/30 selection:text-primary">
+
+    <nav id="main-nav" class="fixed top-0 w-full z-50 glass-nav" role="navigation" aria-label="Main navigation">
+        <div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
+            <a href="#home"
+                class="text-xl font-bold text-[#a4e6ff] font-headline tracking-tighter hover:opacity-80 transition-opacity"
+                aria-label="Yug Joshi - Home">
+                Yug Joshi
+            </a>
+            <div class="hidden md:flex gap-8 items-center">
+                <a class="nav-link text-[#e5e2e1] hover:text-[#a4e6ff] transition-colors font-headline tracking-tighter active"
+                    href="#home">Home</a>
+                <a class="nav-link text-[#e5e2e1] hover:text-[#a4e6ff] transition-colors font-headline tracking-tighter"
+                    href="#projects">Projects</a>
+                <a class="nav-link text-[#e5e2e1] hover:text-[#a4e6ff] transition-colors font-headline tracking-tighter"
+                    href="#stack">Stack</a>
+                <a class="nav-link text-[#e5e2e1] hover:text-[#a4e6ff] transition-colors font-headline tracking-tighter"
+                    href="#contact">Contact</a>
+            </div>
+            <a href="#contact"
+                class="bg-tertiary text-on-tertiary px-6 py-2 rounded-xl font-bold hover:bg-tertiary-fixed-dim transition-all active:scale-95 duration-200">
+                Hire Me
+            </a>
+        </div>
+    </nav>
+
+    <main class="pt-24 pb-20 md:pb-0">
+
+        <section id="home"
+            class="max-w-7xl mx-auto px-8 py-20 md:py-32 grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+            <div class="md:col-span-8">
+                <div class="flex items-center gap-3 mb-6 fade-in-section">
+                    <span class="w-12 h-[1px] bg-tertiary"></span>
+                    <span class="text-tertiary font-label text-sm uppercase tracking-widest font-semibold">Available for
+                        Projects</span>
+                </div>
+                <h1
+                    class="text-6xl md:text-8xl font-headline font-extrabold tracking-tighter text-on-surface mb-8 leading-[0.9] fade-in-section">
+                    Hi, I'm <br />
+                    <span class="text-primary italic">Yug Joshi</span> <br />
+                    BSc.IT Graduate.
+                </h1>
+                <p
+                    class="text-on-surface-variant text-lg md:text-xl max-w-xl font-body leading-relaxed mb-10 fade-in-section">
+                    20 years old, graduate from K.P.B Hinduja College Mumbai. Experienced in Flutter, MERN stack, and
+                    Python. I build live project websites, full-stack applications, and leverage AI tools to deliver
+                    scalable solutions.
+                </p>
+                <div class="flex flex-wrap gap-4 fade-in-section">
+                    <a href="#projects"
+                        class="bg-primary text-on-primary w-fit px-8 py-4 rounded-xl font-bold hover:opacity-90 transition-all text-center flex justify-center items-center gap-2 shadow-[0_0_20px_rgba(164,230,255,0.2)]">
+                        View Projects
+                        <span class="material-symbols-outlined">south</span>
+                    </a>
+                    <a target="_blank" href="https://github.com/Yug-joshi"
+                        class="border border-outline-variant/30 text-on-surface px-8 py-4 rounded-xl font-bold hover:bg-surface-container-high transition-all flex items-center gap-2">
+                        GitHub
+                        <span class="material-symbols-outlined text-sm">open_in_new</span>
+                    </a>
+                </div>
+            </div>
+            <div class="md:col-span-4 hidden md:block fade-in-section">
+                <div class="relative group">
+                    <div
+                        class="absolute -inset-4 bg-primary/20 blur-3xl rounded-full group-hover:bg-primary/30 transition-all duration-700">
+                    </div>
+                    <div
+                        class="relative bg-surface-container/50 backdrop-blur-sm border border-outline-variant/30 p-1.5 rounded-full overflow-hidden aspect-square shadow-2xl">
+                        <img src="profile.png" alt="Yug Joshi"
+                            class="w-full h-full object-cover rounded-full grayscale hover:grayscale-0 transition-all duration-700 scale-105 hover:scale-100" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="featured" class="bg-surface-container-low py-16 border-t border-outline-variant/10">
+            <div class="max-w-7xl mx-auto px-8 py-12">
+                <div class="flex items-center gap-4 mb-16 fade-in-section">
+                    <span class="material-symbols-outlined text-tertiary text-4xl">star</span>
+                    <h2 class="text-4xl md:text-5xl font-headline font-bold tracking-tight">Featured Project</h2>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-12 items-center fade-in-section">
+                    <div class="order-2 md:order-1">
+                        <div
+                            class="inline-block bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest mb-6 border border-primary/20">
+                            Flagship Product
+                        </div>
+                        <h3 class="text-4xl font-headline font-extrabold mb-4 tracking-tighter">
+                            <span class="text-primary italic">Stock Tracker</span>
+                        </h3>
+                        <p class="text-on-surface-variant text-lg mb-8 leading-relaxed">
+                            A highly scalable full-stack platform combining advanced CRM tools with real-time stock
+                            tracking functionalities. Engineered specifically for modern local businesses to
+                            effortlessly manage client relationships while monitoring market dynamics.
+                        </p>
+
+                        <ul class="space-y-4 mb-10 text-sm font-medium">
+                            <li class="flex items-center gap-3">
+                                <span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+                                Dynamic Real-Time Stock Updates & Analytics
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+                                Comprehensive Client Analytics Dashboard
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+                                Secure Admin-Controlled Authorization System
+                            </li>
+                        </ul>
+
+                        <div class="flex flex-wrap gap-4">
+                            <a target="_blank" href="https://dhanicontrol.vercel.app/"
+                                class="bg-primary text-on-primary px-8 py-3 rounded-xl font-bold flex items-center gap-2 hover:bg-primary-container transition-all group">
+                                Live Preview
+                                <span
+                                    class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                            </a>
+                            <a target="_blank" href="https://github.com/Yug-joshi/StockPulse.git"
+                                class="border border-outline-variant/30 text-on-surface px-8 py-3 rounded-xl font-bold hover:bg-surface-container-high transition-all flex items-center gap-2">
+                                GitHub Repo
+                                <span class="material-symbols-outlined text-sm">code</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div
+                        class="order-1 md:order-2 rounded-2xl overflow-hidden border border-outline-variant/20 shadow-2xl group cursor-pointer aspect-[4/3] relative">
+                        <div class="carousel-container" id="stock-carousel">
+                            <div class="carousel-track h-full">
+                                <!-- Slide 1: Image -->
+                                <div
+                                    class="carousel-slide flex items-center justify-center p-6 md:p-14 bg-surface-container-highest/10">
+                                    <div
+                                        class="w-full max-w-[450px] rounded-xl overflow-hidden border border-outline-variant/30 shadow-2xl bg-surface-container mx-auto">
+                                        <div
+                                            class="flex items-center gap-1.5 px-4 py-2 bg-surface-container-high border-b border-outline-variant/20">
+                                            <div class="w-2 h-2 rounded-full bg-error/50"></div>
+                                            <div class="w-2 h-2 rounded-full bg-tertiary/50"></div>
+                                            <div class="w-2 h-2 rounded-full bg-primary/50"></div>
+                                            <div
+                                                class="ml-2 px-3 py-0.5 rounded-md bg-surface-container-lowest/40 text-[8px] font-mono text-on-surface-variant flex-grow text-center">
+                                                stockpulse_dashboard.png</div>
+                                        </div>
+                                        <div class="aspect-video w-full flex items-center justify-center bg-black/40">
+                                            <img src="stock.png" class="w-full h-full object-contain"
+                                                alt="Stock Tracker Dashboard" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Slide 2: Video -->
+                                <div
+                                    class="carousel-slide flex items-center justify-center p-6 md:p-14 bg-surface-container-highest/10">
+                                    <div
+                                        class="w-full max-w-[450px] rounded-xl overflow-hidden border border-outline-variant/30 shadow-2xl bg-surface-container mx-auto">
+                                        <div
+                                            class="flex items-center gap-1.5 px-4 py-2 bg-surface-container-high border-b border-outline-variant/20">
+                                            <div class="w-2 h-2 rounded-full bg-error/50"></div>
+                                            <div class="w-2 h-2 rounded-full bg-tertiary/50"></div>
+                                            <div class="w-2 h-2 rounded-full bg-primary/50"></div>
+                                            <div
+                                                class="ml-2 px-3 py-0.5 rounded-md bg-surface-container-lowest/40 text-[8px] font-mono text-on-surface-variant flex-grow text-center">
+                                                stockpulse_preview.mp4</div>
+                                        </div>
+                                        <div class="aspect-video w-full flex items-center justify-center bg-black/40">
+                                            <video id="stock-video" src="stock.mp4" muted autoplay loop playsinline
+                                                controls class="w-full h-full object-contain"></video>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-indicators">
+                                <div class="indicator active"></div>
+                                <div class="indicator"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="py-8 border-t border-outline-variant/10">
+            <div class="pt-16 pb-20 px-8 max-w-7xl mx-auto">
+                <header class="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-8 fade-in-section">
+                    <div class="max-w-2xl">
+                        <h2 class="font-headline text-4xl md:text-5xl font-extrabold tracking-tighter leading-tight">
+                            More <span class="text-primary">Digital</span> Experiences.
+                        </h2>
+                    </div>
+                    <div class="md:max-w-xs text-right">
+                        <p class="text-on-surface-variant text-sm leading-relaxed">
+                            A curated gallery of software solutions spanning web, mobile, and full-stack architectures.
+                        </p>
+                    </div>
+                </header>
+
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-6 fade-in-section">
+
+                    <div
+                        class="md:col-span-7 group bg-surface-container border border-outline-variant/10 rounded-xl flex flex-col card-hover">
+                        <div class="aspect-[16/9] w-full overflow-hidden rounded-t-xl placeholder-img">
+                            <svg class="w-full h-full transition-transform duration-700 group-hover:scale-105"
+                                viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <rect width="800" height="450" fill="#1c1b1b" />
+                                <rect x="50" y="50" width="700" height="350" rx="20" fill="#201f1f" stroke="#a4e6ff"
+                                    stroke-width="0.5" opacity="0.4" />
+                                <text x="400" y="200" text-anchor="middle" font-family="Plus Jakarta Sans"
+                                    font-size="40" fill="#a4e6ff" font-weight="bold" opacity="0.8">Trade
+                                    Allocation</text>
+                            </svg>
+                        </div>
+                        <div class="p-8 flex flex-col justify-between flex-grow">
+                            <div>
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span
+                                        class="bg-secondary-container/20 text-on-secondary-container px-3 py-1 rounded text-[10px] font-mono tracking-wide">MONGODB</span>
+                                    <span
+                                        class="bg-secondary-container/20 text-on-secondary-container px-3 py-1 rounded text-[10px] font-mono tracking-wide">REACT</span>
+                                    <span
+                                        class="bg-secondary-container/20 text-on-secondary-container px-3 py-1 rounded text-[10px] font-mono tracking-wide">NODE.JS</span>
+                                </div>
+                                <h3 class="text-2xl font-headline font-bold mb-3 tracking-tighter">Trade Allocation
+                                    Platform</h3>
+                                <p class="text-on-surface-variant text-sm leading-relaxed mb-6">A full-stack
+                                    administrative platform designed for secure trade execution and detailed client-wise
+                                    ledger tracking.</p>
+                            </div>
+                            <div class="flex gap-6 mt-auto pt-6 border-t border-outline-variant/10">
+                                <a href="#"
+                                    class="text-primary text-sm font-bold flex items-center gap-1 hover:text-primary-fixed transition-colors">
+                                    Live Preview <span
+                                        class="material-symbols-outlined text-[16px]">arrow_outward</span>
+                                </a>
+                                <a href="#"
+                                    class="text-on-surface text-sm font-bold flex items-center gap-1 hover:text-primary transition-colors">
+                                    Source Code <span class="material-symbols-outlined text-[16px]">code</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        class="md:col-span-5 group bg-surface-container border border-outline-variant/10 rounded-xl flex flex-col card-hover">
+                        <div class="p-8">
+                            <span
+                                class="bg-tertiary/20 text-tertiary px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-widest mb-4 inline-block">Android
+                                / iOS</span>
+                            <h3 class="text-2xl font-headline font-bold mb-2">EduDoc App</h3>
+                            <p class="text-on-surface-variant text-sm leading-relaxed mb-6">High-fidelity
+                                document-sharing platform featuring token-based purchases, bookmarking, and
+                                authentication flows.</p>
+                            <div class="flex flex-wrap gap-3 mb-6">
+                                <span
+                                    class="text-primary text-[11px] font-mono border border-primary/20 px-2 py-1 rounded">#Flutter</span>
+                                <span
+                                    class="text-primary text-[11px] font-mono border border-primary/20 px-2 py-1 rounded">#Supabase</span>
+                            </div>
+                            <div class="flex gap-6">
+                                <a target="_blank" href="https://github.com/shwetajadhav0230-ux/edudoc_app_mdv.git"
+                                    class="text-primary text-sm font-bold flex items-center gap-1 hover:text-primary-fixed transition-colors">
+                                    View App <span class="material-symbols-outlined text-[16px]">arrow_outward</span>
+                                </a>
+                                <a target="_blank" href="https://github.com/shwetajadhav0230-ux/edudoc_app_mdv.git"
+                                    class="text-on-surface text-sm font-bold flex items-center gap-1 hover:text-primary transition-colors">
+                                    Source Code <span class="material-symbols-outlined text-[16px]">code</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div
+                            class="mt-auto aspect-square overflow-hidden rounded-b-xl relative bg-surface-container-highest/50">
+                            <div class="carousel-container" id="edudoc-carousel">
+                                <div class="carousel-track h-full">
+                                    <div class="carousel-slide">
+                                        <img src="edudoc2.jpg" class="app-screenshot" alt="EduDoc Preview 1" />
+                                    </div>
+                                    <div class="carousel-slide">
+                                        <img src="edudoc3.jpg" class="app-screenshot" alt="EduDoc Preview 2" />
+                                    </div>
+                                    <div class="carousel-slide">
+                                        <img src="edudoc4.jpg" class="app-screenshot" alt="EduDoc Preview 3" />
+                                    </div>
+                                </div>
+                                <div class="carousel-indicators">
+                                    <div class="indicator active"></div>
+                                    <div class="indicator"></div>
+                                    <div class="indicator"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-20 border-t border-outline-variant/10 pt-16 col-span-full fade-in-section">
+                        <div class="flex items-center justify-between mb-10">
+                            <h3 class="text-2xl font-headline font-bold flex items-center gap-3 tracking-tight">
+                                <span class="material-symbols-outlined text-primary text-2xl">folder_open</span>
+                                More from Archive
+                            </h3>
+                            <a href="https://github.com/Yug-joshi" target="_blank" rel="noopener noreferrer"
+                                class="text-sm font-bold text-on-surface-variant hover:text-primary transition-colors flex items-center gap-1">
+                                GitHub Profile <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+                            </a>
+                        </div>
+                        <div id="github-repos-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                            <div class="skeleton h-48 rounded-xl"></div>
+                            <div class="skeleton h-48 rounded-xl"></div>
+                            <div class="skeleton h-48 rounded-xl"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-7xl mx-auto px-8 py-20 fade-in-section">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl md:text-5xl font-headline font-bold tracking-tight mb-4">Project Preview</h2>
+                <p class="text-on-surface-variant max-w-xl mx-auto">Watch a high-speed technical walkthrough of the
+                    architecture and live user interface in action.</p>
+            </div>
+
+            <div
+                class="relative rounded-2xl overflow-hidden border border-outline-variant/20 shadow-2xl group bg-surface-container aspect-[16/9] flex items-center justify-center cursor-pointer">
+
+                <svg class="absolute inset-0 w-full h-full opacity-40 group-hover:opacity-70 transition-opacity duration-500"
+                    viewBox="0 0 1000 500" preserveAspectRatio="none">
+                    <defs>
+                        <pattern id="gridDemo" width="40" height="40" patternUnits="userSpaceOnUse">
+                            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#a4e6ff" stroke-width="0.5" opacity="0.3" />
+                        </pattern>
+                    </defs>
+                    <rect width="1000" height="500" fill="url(#gridDemo)" />
+                </svg>
+
+                <div
+                    class="absolute inset-0 flex items-center justify-center bg-black/40 group-hover:bg-black/20 transition-colors duration-500">
+                    <div
+                        class="w-20 h-20 bg-primary/90 text-on-primary rounded-full flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300 shadow-[0_0_30px_rgba(164,230,255,0.5)]">
+                        <span class="material-symbols-outlined text-4xl"
+                            style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section
+            class="max-w-7xl mx-auto px-8 py-16 grid grid-cols-1 md:grid-cols-2 gap-12 border-t border-outline-variant/10 fade-in-section">
+            <div class="md:col-span-1 border-l-2 border-primary pl-8">
+                <div class="text-on-surface text-6xl font-headline font-extrabold mb-2 tracking-tighter">8<span
+                        class="text-primary">+</span></div>
+                <div class="text-on-surface-variant text-sm uppercase tracking-widest font-bold">Projects Engineered
+                </div>
+            </div>
+            <div class="md:col-span-1 border-l-2 border-primary pl-8">
+                <div class="text-on-surface text-6xl font-headline font-extrabold mb-2 tracking-tighter">1</div>
+                <div class="text-on-surface-variant text-sm uppercase tracking-widest font-bold">Live Project Hosted
+                </div>
+            </div>
+        </section>
+
+        <section id="stack" class="py-8 bg-surface-container-low border-t border-outline-variant/10">
+            <div class="pt-24 pb-24 px-8 max-w-7xl mx-auto">
+                <header class="grid grid-cols-1 md:grid-cols-12 gap-8 mb-24 items-end fade-in-section">
+                    <div class="md:col-span-8">
+                        <h2
+                            class="text-6xl md:text-8xl font-headline font-extrabold tracking-tighter text-on-surface leading-[0.9]">
+                            TECHNICAL<br />
+                            <span class="text-primary">STACK</span>
+                        </h2>
+                    </div>
+                    <div class="md:col-span-4 flex flex-col items-end text-right">
+                        <span class="text-tertiary font-label text-sm font-bold tracking-widest mb-4">ENGINEERING
+                            CAPABILITIES</span>
+                        <p class="text-on-surface-variant max-w-xs leading-relaxed">
+                            A curated selection of specialized artifacts and frameworks utilized to architect
+                            high-performance digital experiences.
+                        </p>
+                    </div>
+                </header>
+
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-4 fade-in-section">
+                    <div
+                        class="md:col-span-8 bg-surface-container rounded-xl p-8 md:p-12 relative overflow-hidden ghost-border card-hover">
+                        <div class="absolute top-0 right-0 p-8 opacity-5">
+                            <span class="material-symbols-outlined text-[150px]"
+                                style="font-variation-settings: 'FILL' 1;">terminal</span>
+                        </div>
+                        <div class="relative z-10">
+                            <div class="flex items-center gap-3 mb-12">
+                                <span class="material-symbols-outlined text-primary text-3xl">data_object</span>
+                                <h3 class="text-3xl font-headline font-bold tracking-tight">Languages & Frameworks</h3>
+                            </div>
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-8">
+                                <div class="group">
+                                    <div class="text-primary font-headline font-bold text-2xl mb-2">React</div>
+                                    <p class="text-sm text-on-surface-variant mb-4">Declarative UI architecture & SPAs.
+                                    </p>
+                                    <span
+                                        class="bg-secondary-container/20 text-on-secondary-container text-[10px] px-2 py-1 rounded font-mono tracking-wide">JAVASCRIPT</span>
+                                </div>
+                                <div class="group">
+                                    <div class="text-primary font-headline font-bold text-2xl mb-2">Flutter</div>
+                                    <p class="text-sm text-on-surface-variant mb-4">Cross-platform mastery for mobile
+                                        builds.</p>
+                                    <span
+                                        class="bg-secondary-container/20 text-on-secondary-container text-[10px] px-2 py-1 rounded font-mono tracking-wide">DART</span>
+                                </div>
+                                <div class="group">
+                                    <div class="text-primary font-headline font-bold text-2xl mb-2">Python</div>
+                                    <p class="text-sm text-on-surface-variant mb-4">Scalable scripting & data
+                                        foundations.</p>
+                                    <span
+                                        class="bg-secondary-container/20 text-on-secondary-container text-[10px] px-2 py-1 rounded font-mono tracking-wide">BACKEND</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        class="md:col-span-4 bg-surface-container rounded-xl p-8 md:p-12 ghost-border card-hover flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center gap-3 mb-8">
+                                <span class="material-symbols-outlined text-primary text-3xl">dns</span>
+                                <h3 class="text-3xl font-headline font-bold tracking-tight">Backend & DB</h3>
+                            </div>
+                            <div
+                                class="p-5 bg-surface-container-lowest rounded-xl border-l-2 border-primary shadow-inner">
+                                <h4 class="font-bold text-on-surface text-lg mb-1">Node.js & Express</h4>
+                                <p class="text-sm text-on-surface-variant">Scalable server environments and API routing.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="mt-8 pt-8 border-t border-outline-variant/15">
+                            <span
+                                class="text-xs font-label uppercase tracking-widest text-on-surface-variant block mb-2">DB
+                                Engines</span>
+                            <span class="text-sm text-primary font-mono bg-primary/5 px-3 py-2 rounded-lg block">MongoDB
+                                / MySQL / Supabase</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-24 border-t border-outline-variant/10 fade-in-section">
+            <div class="max-w-7xl mx-auto px-8">
+                <div class="flex justify-between items-end mb-16">
+                    <h2 class="text-4xl md:text-5xl font-headline font-bold tracking-tight">Core Services</h2>
+                    <p class="text-on-surface-variant text-sm max-w-[200px] text-right hidden md:block italic">Crafting
+                        the future of web and mobile engineering.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div
+                        class="md:col-span-2 group relative overflow-hidden bg-surface-container border border-outline-variant/10 rounded-xl p-8 hover:border-primary/40 transition-all duration-500 card-hover">
+                        <div class="relative z-10">
+                            <div
+                                class="bg-secondary-container text-on-secondary-container w-12 h-12 flex items-center justify-center rounded-lg mb-6">
+                                <span class="material-symbols-outlined">code</span>
+                            </div>
+                            <h3 class="text-3xl font-headline font-bold mb-4">Full-Stack Development</h3>
+                            <p class="text-on-surface-variant font-body max-w-md mb-6 leading-relaxed">
+                                Building lightning-fast, secure, and responsive web applications using the MERN stack
+                                and modern frameworks.
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span
+                                    class="bg-secondary-container/20 text-on-secondary-container px-3 py-1 rounded-sm text-xs font-semibold uppercase tracking-tighter">React</span>
+                                <span
+                                    class="bg-secondary-container/20 text-on-secondary-container px-3 py-1 rounded-sm text-xs font-semibold uppercase tracking-tighter">Node.js</span>
+                                <span
+                                    class="bg-secondary-container/20 text-on-secondary-container px-3 py-1 rounded-sm text-xs font-semibold uppercase tracking-tighter">MongoDB</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        class="bg-surface-container-highest border border-outline-variant/10 rounded-xl p-8 flex flex-col justify-between hover:border-primary/40 transition-all duration-500 card-hover">
+                        <div>
+                            <div
+                                class="bg-primary text-on-primary w-12 h-12 flex items-center justify-center rounded-lg mb-6">
+                                <span class="material-symbols-outlined">smartphone</span>
+                            </div>
+                            <h3 class="text-2xl font-headline font-bold mb-4">Mobile Apps</h3>
+                            <p class="text-on-surface-variant font-body text-sm leading-relaxed mb-6">
+                                Developing cross-platform mobile solutions that feel native. High-performance apps for
+                                iOS and Android.
+                            </p>
+                        </div>
+                        <div class="flex flex-wrap gap-2">
+                            <span
+                                class="bg-surface-container text-on-surface-variant px-3 py-1 rounded-sm text-xs border border-outline-variant/20 tracking-tighter">Flutter</span>
+                            <span
+                                class="bg-surface-container text-on-surface-variant px-3 py-1 rounded-sm text-xs border border-outline-variant/20 tracking-tighter">Dart</span>
+                        </div>
+                    </div>
+
+                    <div
+                        class="bg-surface-container border border-outline-variant/10 rounded-xl p-8 flex flex-col justify-between hover:border-primary/40 transition-all duration-500 card-hover">
+                        <div>
+                            <div
+                                class="bg-tertiary text-on-tertiary w-12 h-12 flex items-center justify-center rounded-lg mb-6">
+                                <span class="material-symbols-outlined">design_services</span>
+                            </div>
+                            <h3 class="text-2xl font-headline font-bold mb-4">Data Solutions</h3>
+                            <p class="text-on-surface-variant font-body text-sm leading-relaxed mb-6">
+                                Exploring data science, Python integrations, and scalable database architectures for
+                                robust performance.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div
+                        class="md:col-span-2 bg-[#0e0e0e] border border-outline-variant/10 rounded-xl overflow-hidden flex flex-col md:flex-row items-center hover:border-primary/40 transition-all duration-500 card-hover">
+                        <div class="p-8 flex-1">
+                            <h3 class="text-2xl font-headline font-bold text-primary mb-4 italic">Performance First</h3>
+                            <p class="text-on-surface-variant font-body text-sm leading-relaxed">
+                                Every line of code is written with speed in mind. From asset optimization to efficient
+                                rendering logic, I ensure your application stays fast under pressure.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="bg-surface-container-low py-8 border-t border-outline-variant/10">
+            <div class="pt-24 pb-24 px-6 md:px-12 max-w-7xl mx-auto">
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-20 items-end fade-in-section">
+                    <div class="lg:col-span-2">
+                        <h2
+                            class="text-5xl md:text-7xl font-headline font-extrabold tracking-tighter text-on-surface leading-[0.9] mb-6">
+                            Let's Build the <br /><span class="text-primary">Next Artifact.</span>
+                        </h2>
+                        <p class="text-on-surface-variant text-lg max-w-xl leading-relaxed">
+                            Available for select freelance opportunities and full-stack engineering roles. I bring my
+                            experience from building scalable products, custom applications, and leveraging AI to
+                            accelerate development.
+                        </p>
+                    </div>
+                    <div class="flex flex-col gap-4 text-right">
+                        <div class="inline-flex items-center justify-end gap-2 text-tertiary">
+                            <span class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span>
+                            <span class="font-label text-sm font-semibold tracking-widest uppercase">Available for
+                                work</span>
+                        </div>
+                        <div class="text-on-surface-variant text-sm font-label">Based in Mumbai, India / Remote</div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 fade-in-section">
+                    <div class="lg:col-span-7 bg-surface-container rounded-xl p-8 md:p-12 relative overflow-hidden">
+                        <form id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST"
+                            class="space-y-8 relative z-10">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                <div class="space-y-2">
+                                    <label for="name"
+                                        class="text-xs font-semibold text-primary uppercase tracking-widest">Full
+                                        Name</label>
+                                    <input id="name" type="text" name="name" placeholder="John Doe" required
+                                        class="w-full bg-surface-container-highest border-none border-b-2 border-transparent focus:border-primary focus:ring-0 text-on-surface p-4 rounded-lg transition-all placeholder:text-on-surface-variant/30" />
+                                </div>
+                                <div class="space-y-2">
+                                    <label for="email"
+                                        class="text-xs font-semibold text-primary uppercase tracking-widest">Email
+                                        Address</label>
+                                    <input id="email" type="email" name="email" placeholder="email@example.com" required
+                                        class="w-full bg-surface-container-highest border-none border-b-2 border-transparent focus:border-primary focus:ring-0 text-on-surface p-4 rounded-lg transition-all placeholder:text-on-surface-variant/30" />
+                                </div>
+                            </div>
+                            <div class="space-y-2">
+                                <label for="subject"
+                                    class="text-xs font-semibold text-primary uppercase tracking-widest">Subject</label>
+                                <select id="subject" name="subject"
+                                    class="w-full bg-surface-container-highest border-none border-b-2 border-transparent focus:border-primary focus:ring-0 text-on-surface p-4 rounded-lg transition-all">
+                                    <option>Project Inquiry</option>
+                                    <option>Employment</option>
+                                    <option>Just Saying Hi</option>
+                                </select>
+                            </div>
+                            <div class="space-y-2">
+                                <label for="message"
+                                    class="text-xs font-semibold text-primary uppercase tracking-widest">Message</label>
+                                <textarea id="message" name="message" placeholder="Tell me about your project..."
+                                    rows="5" required
+                                    class="w-full bg-surface-container-highest border-none border-b-2 border-transparent focus:border-primary focus:ring-0 text-on-surface p-4 rounded-lg transition-all placeholder:text-on-surface-variant/30"></textarea>
+                            </div>
+                            <button type="submit"
+                                class="w-full md:w-auto bg-primary text-on-primary px-10 py-4 rounded-xl font-bold text-lg hover:bg-primary-container transition-all flex items-center justify-center gap-3 group">
+                                Send Message
+                                <span
+                                    class="material-symbols-outlined group-hover:translate-x-1 transition-transform">send</span>
+                            </button>
+                        </form>
+                    </div>
+
+                    <div class="lg:col-span-5 flex flex-col gap-8">
+                        <div
+                            class="bg-surface-container p-8 rounded-xl group cursor-pointer hover:bg-surface-container-high transition-colors border border-outline-variant/10 card-hover">
+                            <div class="flex items-start justify-between mb-8">
+                                <div>
+                                    <h3 class="text-2xl font-headline font-bold mb-2">Technical Resume</h3>
+                                    <p class="text-on-surface-variant text-sm">PDF Format</p>
+                                </div>
+                                <div class="p-3 bg-secondary-container rounded-lg text-on-secondary-container">
+                                    <span class="material-symbols-outlined"
+                                        style="font-variation-settings: 'FILL' 1;">description</span>
+                                </div>
+                            </div>
+                            <a class="inline-flex items-center gap-2 text-primary font-bold group-hover:gap-4 transition-all"
+                                href="#" target="_blank" rel="noopener noreferrer">
+                                Download CV
+                                <span class="material-symbols-outlined">download</span>
+                            </a>
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-4">
+                            <a class="bg-surface-container-lowest p-6 rounded-xl hover:bg-surface-container-high transition-all flex flex-col gap-4 border border-outline-variant/5 card-hover"
+                                href="https://github.com/Yug-joshi" target="_blank" rel="noopener noreferrer">
+                                <span class="material-symbols-outlined text-primary text-3xl">terminal</span>
+                                <div>
+                                    <div class="text-xs font-semibold text-primary uppercase tracking-widest mb-1">
+                                        Source</div>
+                                    <div class="font-headline font-bold">GitHub</div>
+                                </div>
+                            </a>
+                            <a class="bg-surface-container-lowest p-6 rounded-xl hover:bg-surface-container-high transition-all flex flex-col gap-4 border border-outline-variant/5 card-hover"
+                                href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+                                <span class="material-symbols-outlined text-primary text-3xl">share</span>
+                                <div>
+                                    <div class="text-xs font-semibold text-primary uppercase tracking-widest mb-1">
+                                        Network</div>
+                                    <div class="font-headline font-bold">LinkedIn</div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="w-full py-12 bg-[#0e0e0e] border-t border-outline-variant/10">
+        <div class="flex flex-col md:flex-row justify-between items-center px-8 max-w-7xl mx-auto gap-8">
+            <div class="flex flex-col items-center md:items-start gap-2">
+                <a href="#home"
+                    class="text-[#a4e6ff] font-bold text-xl font-headline hover:opacity-80 transition-opacity">Yug
+                    Joshi</a>
+                <p class="text-[#e5e2e1]/60 font-body text-sm">© 2026 Yug Joshi. Built with Precision.</p>
+            </div>
+            <div class="flex gap-8">
+                <a class="text-[#e5e2e1]/60 hover:text-[#a4e6ff] transition-all font-body text-sm"
+                    href="https://github.com/Yug-joshi" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a class="text-[#e5e2e1]/60 hover:text-[#a4e6ff] transition-all font-body text-sm"
+                    href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+
+    <a href="#projects"
+        class="floating-btn fixed bottom-8 right-8 bg-primary text-on-primary px-6 py-4 rounded-full shadow-[0_10px_30px_rgba(164,230,255,0.3)] z-50 font-bold flex items-center gap-2 hover:scale-105 transition-transform hidden md:flex cursor-pointer">
+        View Projects <span class="material-symbols-outlined text-sm">arrow_upward</span>
+    </a>
+
+    <div class="md:hidden fixed bottom-0 left-0 w-full glass-nav z-50 px-6 py-4 flex justify-around items-center no-print"
+        role="navigation" aria-label="Mobile navigation">
+        <a href="#home" class="mobile-nav-link flex flex-col items-center gap-1 text-[#e5e2e1]/60 transition-colors">
+            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+            <span class="text-[10px] font-bold">Home</span>
+        </a>
+        <a href="#projects"
+            class="mobile-nav-link flex flex-col items-center gap-1 text-[#e5e2e1]/60 transition-colors">
+            <span class="material-symbols-outlined">terminal</span>
+            <span class="text-[10px] font-bold">Projects</span>
+        </a>
+        <a href="#stack" class="mobile-nav-link flex flex-col items-center gap-1 text-[#e5e2e1]/60 transition-colors">
+            <span class="material-symbols-outlined">layers</span>
+            <span class="text-[10px] font-bold">Stack</span>
+        </a>
+        <a href="#contact" class="mobile-nav-link flex flex-col items-center gap-1 text-[#e5e2e1]/60 transition-colors">
+            <span class="material-symbols-outlined">mail</span>
+            <span class="text-[10px] font-bold">Contact</span>
+        </a>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
