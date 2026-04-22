@@ -104,9 +104,9 @@ document.addEventListener('DOMContentLoaded', () => {
         container.innerHTML = '';
 
         if (media.type === 'image') {
-            container.innerHTML = `<img src="${media.src}" style="max-height: 80vh; max-width: 100%; object-fit: contain;" class="modal-media-item p-4" alt="Preview">`;
+            container.innerHTML = `<img src="${media.src}" style="max-height: 100%; max-width: 100%; object-fit: contain;" class="modal-media-item p-4 md:p-8" alt="Preview">`;
         } else if (media.type === 'video') {
-            container.innerHTML = `<video src="${media.src}" style="max-height: 80vh; max-width: 100%; object-fit: contain;" class="modal-media-item p-4" controls autoplay muted loop></video>`;
+            container.innerHTML = `<video src="${media.src}" style="max-height: 100%; max-width: 100%; object-fit: contain;" class="modal-media-item p-4 md:p-8" controls autoplay muted loop></video>`;
         }
     }
 
@@ -270,8 +270,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let slideInterval;
 
         function updateCarousel() {
-            const width = carousel.offsetWidth;
-            track.style.transform = `translateX(-${currentSlide * width}px)`;
+            track.style.transform = `translateX(-${currentSlide * 100}%)`;
             indicators.forEach((ind, i) => {
                 ind.classList.toggle('active', i === currentSlide);
             });
