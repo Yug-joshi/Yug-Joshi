@@ -140,6 +140,73 @@ select:focus-visible {
     outline-offset: 2px;
 }
 
+/* Touch Feedback for Mobile */
+@media (hover: none) and (pointer: coarse) {
+    /* Disable hover effects on touch devices */
+    .card-hover:hover {
+        transform: none;
+        border-color: inherit;
+    }
+
+    .nav-link:hover {
+        color: inherit;
+    }
+
+    /* Enhance active states for touch */
+    button:active,
+    a:active,
+    .card-hover:active {
+        transform: scale(0.98);
+        opacity: 0.8;
+    }
+
+    /* Active state for nav links */
+    .nav-link:active {
+        opacity: 0.7;
+    }
+
+    /* Touch target sizing */
+    button,
+    a,
+    .nav-link {
+        min-height: 44px;
+        min-width: 44px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Increase tap feedback time */
+    * {
+        -webkit-tap-highlight-color: rgba(164, 230, 255, 0.2);
+    }
+}
+
+/* General touch feedback for all devices */
+button,
+a[onclick],
+.card-hover,
+.nav-link,
+.indicator {
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+}
+
+/* Active state styling */
+button:active {
+    transform: scale(0.97);
+    transition-duration: 0.1s;
+}
+
+.card-hover:active {
+    box-shadow: 0 5px 15px -10px rgba(0, 0, 0, 0.5);
+}
+
+.indicator:active {
+    transform: scale(1.3);
+}
+
 @media (prefers-reduced-motion: reduce) {
     * {
         animation-duration: 0.01ms !important;

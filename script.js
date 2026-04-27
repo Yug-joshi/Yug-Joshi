@@ -1,4 +1,49 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Touch Feedback System
+    const touchFeedback = {
+        isTouch: () => {
+            return (
+                window.matchMedia('(hover: none) and (pointer: coarse)').matches ||
+                ('ontouchstart' in window) ||
+                navigator.maxTouchPoints > 0
+            );
+        },
+        triggerHaptic: (intensity = 'medium') => {
+            if ('vibrate' in navigator) {
+                const patterns = {
+                    light: 10,
+                    medium: 20,
+                    heavy: 30,
+                    double: [15, 10, 15]
+                };
+                navigator.vibrate(patterns[intensity] || patterns.medium);
+            }
+        },
+        addTouchFeedback: (element) => {
+            if (!touchFeedback.isTouch()) return;
+
+            element.addEventListener('touchstart', (e) => {
+                touchFeedback.triggerHaptic('light');
+                element.style.opacity = '0.8';
+            }, { passive: true });
+
+            element.addEventListener('touchend', (e) => {
+                element.style.opacity = '1';
+            }, { passive: true });
+
+            element.addEventListener('touchcancel', (e) => {
+                element.style.opacity = '1';
+            }, { passive: true });
+        }
+    };
+
+    // Initialize touch feedback for interactive elements
+    if (touchFeedback.isTouch()) {
+        document.querySelectorAll('button, a[href], .card-hover, .nav-link, .indicator').forEach(el => {
+            touchFeedback.addTouchFeedback(el);
+        });
+    }
+
     // Project Data for Modal
     const projectData = {
         'trade-allocation': {
