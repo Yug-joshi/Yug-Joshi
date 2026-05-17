@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta name="theme-color" content="#131313" />
+    <meta name="description"
+        content="Yug Joshi — BSc.IT Graduate, Full-Stack Developer specializing in Flutter, MERN stack, and Python. View projects, technical stack, and get in touch.">
+    <meta name="keywords" content="Developer, Full-Stack, Flutter, MERN, React, Python, Portfolio">
+    <meta property="og:title" content="Yug Joshi | Full-Stack Developer Portfolio">
+    <meta property="og:description" content="Building digital experiences with precision and performance.">
+    <meta property="og:type" content="website">
+
+    <title>Yug Joshi | Full-Stack Developer Portfolio</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23131313'/><rect width='100' height='100' rx='20' fill='none' stroke='%23a4e6ff' stroke-width='4'/><text fill='%23a4e6ff' font-family='sans-serif' font-weight='900' font-size='50' x='50' y='68' text-anchor='middle'>YJ</text></svg>">
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            future: {
+                hoverOnlyWhenSupported: true
+            },
+            theme: {
+                extend: {
+                    colors: {
+                        "secondary-fixed": "#d8e2ff",
+                        "tertiary-fixed-dim": "#eec200",
+                        "primary-fixed-dim": "#4cd6ff",
+                        "on-error": "#690005",
+                        "tertiary-fixed": "#ffe083",
+                        "on-tertiary-fixed": "#231b00",
+                        "surface": "#16161a",
+                        "secondary-fixed-dim": "#adc6ff",
+                        "surface-container-high": "#2a2a2e",
+                        "surface-bright": "#3a3a40",
+                        "secondary": "#adc6ff",
+                        "on-primary-fixed": "#001f28",
+                        "secondary-container": "#0566d9",
+                        "primary-container": "#00d1ff",
+                        "error": "#ffb4ab",
+                        "surface-container-low": "#1a1a1f",
+                        "error-container": "#93000a",
+                        "on-tertiary": "#3c2f00",
+                        "outline-variant": "#3c494e",
+                        "on-primary": "#003543",
+                        "surface-dim": "#16161a",
+                        "inverse-surface": "#eaeaea",
+                        "tertiary": "#ffd95f",
+                        "on-surface": "#eaeaea",
+                        "on-secondary-fixed": "#001a42",
+                        "surface-container-highest": "#35353a",
+                        "inverse-primary": "#00677f",
+                        "primary": "#b8e2f2",
+                        "surface-container": "#1e1e24",
+                        "on-tertiary-container": "#604c00",
+                        "background": "#16161a",
+                        "surface-variant": "#35353a",
+                        "on-primary-fixed-variant": "#004e60",
+                        "primary-fixed": "#b7eaff",
+                        "tertiary-container": "#e7bc00",
+                        "outline": "#859399",
+                        "on-secondary-container": "#e6ecff",
+                        "on-background": "#e5e2e1",
+                        "on-error-container": "#ffdad6",
+                        "inverse-on-surface": "#313030",
+                        "surface-tint": "#4cd6ff",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-secondary-fixed-variant": "#004395",
+                        "on-secondary": "#002e6a",
+                        "on-surface-variant": "#bbc9cf",
+                        "on-tertiary-fixed-variant": "#574500",
+                        "on-primary-container": "#00566a"
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.125rem",
+                        lg: "0.25rem",
+                        xl: "0.5rem",
+                        full: "0.75rem"
+                    },
+                    fontFamily: {
+                        headline: ["Plus Jakarta Sans"],
+                        body: ["Inter"],
+                        label: ["Inter"]
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.6s ease-out',
+                        'slide-up': 'slideUp 0.6s ease-out',
+                        'pulse-glow': 'pulseGlow 2s ease-in-out infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                        'float-reverse': 'floatReverse 8s ease-in-out infinite',
+                        'float-slow': 'float 12s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' }
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' }
+                        },
+                        pulseGlow: {
+                            '0%, 100%': { boxShadow: '0 0 0 0 rgba(164, 230, 255, 0.7)' },
+                            '50%': { boxShadow: '0 0 0 10px rgba(164, 230, 255, 0)' }
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' }
+                        },
+                        floatReverse: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(20px)' }
+                        }
+                    }
+                },
+            },
+        }
+    </script>
+    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,600,700&display=swap" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400;1,9..40,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+
+
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body class="bg-surface text-on-surface font-body selection:bg-primary/30 selection:text-primary">
+
+    <!-- ==================== INTERACTIVE NETWORK MESH LOADER ==================== -->
+    <div id="network-mesh-loader" class="fixed inset-0 z-[9999] bg-[#070709] flex items-center justify-center overflow-hidden select-none" style="perspective: 1000px;">
+        <!-- Interactive 3D Parallax Container -->
+        <div id="mesh-parallax-container" class="relative z-10 w-[300px] h-[300px] flex items-center justify-center transition-all duration-200 ease-out" style="transform-style: preserve-3d;">
+            <!-- Subtle backdrop network matrix glow -->
+            <div class="absolute w-52 h-52 bg-primary/10 rounded-full blur-3xl pointer-events-none animate-pulse"></div>
+
+            <svg width="260" height="260" viewBox="0 0 120 120" class="text-primary overflow-visible relative z-10">
+                <!-- Center Core Node Hub -->
+                <circle cx="60" cy="60" r="5" fill="currentColor" class="mesh-core animate-pulse shadow-lg"></circle>
+                <circle cx="60" cy="60" r="10" fill="none" stroke="currentColor" stroke-width="0.5" opacity="0.3"></circle>
+                
+                <!-- Orbit Satellites Interconnection hexagon paths -->
+                <path d="M 60 20 L 95 40 L 95 80 L 60 100 L 25 80 L 25 40 Z" fill="none" stroke="currentColor" stroke-width="0.75" opacity="0.25" class="mesh-hexagon"></path>
+                
+                <!-- Core Radial Connection traces -->
+                <line x1="60" y1="20" x2="60" y2="60" stroke="currentColor" stroke-width="1.25" class="mesh-trace trace-y"></line>
+                <line x1="95" y1="40" x2="60" y2="60" stroke="currentColor" stroke-width="1.25" class="mesh-trace trace-angle"></line>
+                <line x1="95" y1="80" x2="60" y2="60" stroke="currentColor" stroke-width="1.25" class="mesh-trace trace-angle"></line>
+                <line x1="60" y1="100" x2="60" y2="60" stroke="currentColor" stroke-width="1.25" class="mesh-trace trace-y"></line>
+                <line x1="25" y1="80" x2="60" y2="60" stroke="currentColor" stroke-width="1.25" class="mesh-trace trace-angle"></line>
+                <line x1="25" y1="40" x2="60" y2="60" stroke="currentColor" stroke-width="1.25" class="mesh-trace trace-angle"></line>
+                
+                <!-- Satellite Nodes (hollow styled circles) -->
+                <circle cx="60" cy="20" r="3" fill="#070709" stroke="currentColor" stroke-width="1.75" class="mesh-node node-up"></circle>
+                <circle cx="95" cy="40" r="3" fill="#070709" stroke="currentColor" stroke-width="1.75" class="mesh-node node-up"></circle>
+                <circle cx="95" cy="80" r="3" fill="#070709" stroke="currentColor" stroke-width="1.75" class="mesh-node node-up"></circle>
+                <circle cx="60" cy="100" r="3" fill="#070709" stroke="currentColor" stroke-width="1.75" class="mesh-node node-up"></circle>
+                <circle cx="25" cy="80" r="3" fill="#070709" stroke="currentColor" stroke-width="1.75" class="mesh-node node-up"></circle>
+                <circle cx="25" cy="40" r="3" fill="#070709" stroke="currentColor" stroke-width="1.75" class="mesh-node node-up"></circle>
+
+                <!-- Data Pulsers flying along paths to the center core -->
+                <circle cx="60" cy="20" r="1.5" fill="currentColor" class="data-pulser pulser-1"></circle>
+                <circle cx="95" cy="40" r="1.5" fill="currentColor" class="data-pulser pulser-2"></circle>
+                <circle cx="95" cy="80" r="1.5" fill="currentColor" class="data-pulser pulser-3"></circle>
+                <circle cx="60" cy="100" r="1.5" fill="currentColor" class="data-pulser pulser-4"></circle>
+                <circle cx="25" cy="80" r="1.5" fill="currentColor" class="data-pulser pulser-5"></circle>
+                <circle cx="25" cy="40" r="1.5" fill="currentColor" class="data-pulser pulser-6"></circle>
+            </svg>
+        </div>
+
+        <!-- Center Collision Spark Ripple -->
+        <div id="mesh-spark" class="absolute w-8 h-8 rounded-full bg-primary opacity-0 blur-[3px] transition-all duration-400 z-20 pointer-events-none"></div>
+    </div>
+    <script>
+        (function() {
+            const isReload = performance.getEntriesByType('navigation')[0]?.type === 'reload';
+            const isFirstLoad = !sessionStorage.getItem('site-loaded');
+            if (!isFirstLoad && !isReload) {
+                document.getElementById('network-mesh-loader').style.display = 'none';
+            }
+        })();
+    </script>
+
+    <nav id="main-nav" class="fixed top-0 w-full z-50 glass-nav" role="navigation" aria-label="Main navigation">
+        <div class="flex justify-between items-center px-6 md:px-16 lg:px-24 2xl:px-32 py-4 w-full">
+            <a href="index.html" class="text-on-surface font-bold text-2xl font-headline tracking-tighter hover:scale-105 transition-transform flex items-center gap-2 group">
+                <svg width="36" height="36" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" class="text-primary group-hover:rotate-6 transition-transform duration-500">
+                    <rect width="100" height="100" rx="20" fill="#131313"/>
+                    <rect width="100" height="100" rx="20" fill="none" stroke="currentColor" stroke-width="6"/>
+                    <text fill="currentColor" font-family="sans-serif" font-weight="900" font-size="50" x="50" y="68" text-anchor="middle">YJ</text>
+                </svg>
+                <span>Yug<span class="text-primary">.</span></span>
+            </a>
+            <div class="hidden md:flex gap-8 items-center">
+                <a class="nav-link text-[#e5e2e1] hover:text-[#a4e6ff] transition-colors font-headline tracking-tighter"
+                    href="index.html">Home</a>
+                <a class="nav-link text-[#e5e2e1] hover:text-[#a4e6ff] transition-colors font-headline tracking-tighter"
+                    href="projects.html">Projects</a>
+                <a class="nav-link text-[#e5e2e1] hover:text-[#a4e6ff] transition-colors font-headline tracking-tighter"
+                    href="stack.html">Stack</a>
+                <a class="nav-link text-[#e5e2e1] hover:text-[#a4e6ff] transition-colors font-headline tracking-tighter"
+                    href="contact.html">Contact</a>
+            </div>
+            <a href="contact.html"
+                class="bg-tertiary text-on-tertiary px-6 py-2 rounded-xl font-bold hover:bg-tertiary-fixed-dim transition-all active:scale-95 duration-200 magnetic-btn">
+                Collaborate
+            </a>
+        </div>
+    </nav>
+
+    <main class="pt-24 pb-20 md:pb-0">
+        <!-- Photorealistic Circuit Background -->
+        <div class="fixed inset-0 -z-10 pointer-events-none overflow-hidden bg-[#0a0a0a]">
+            <!-- Film Grain / Noise Overlay -->
+            <div class="noise-overlay"></div>
+
+
+            <!-- Circuit Traces SVG -->
+            <svg class="absolute inset-0 w-full h-full opacity-60 circuit-bg-svg" viewBox="-300 -200 1600 1000" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <filter id="glow-intense" x="-20%" y="-20%" width="140%" height="140%">
+                        <feGaussianBlur stdDeviation="2" result="blur1" />
+                        <feMerge>
+                            <feMergeNode in="blur1" />
+                            <feMergeNode in="SourceGraphic" />
+                        </feMerge>
+                    </filter>
+                    
+                    <filter id="depth-blur" x="-10%" y="-10%" width="120%" height="120%">
+                        <feGaussianBlur stdDeviation="1.5" />
+                    </filter>
+                </defs>
+
+                <!-- Base Copper/Metallic Traces (Unlit) -->
+                <g stroke="#1a202c" stroke-width="2" fill="none" stroke-linecap="square" stroke-linejoin="miter">
+                    <!-- Out of focus background traces -->
+                    <g filter="url(#depth-blur)" stroke="#11151c" stroke-width="3">
+                        <path d="M-100,500 L100,500 L200,400 L300,400 L400,500 L800,500" />
+                        <path d="M700,650 L700,550 L800,450 L900,450 L1050,600" />
+                        <path d="M200,-50 L200,50 L300,150 L500,150 L600,50 L900,50" />
+                    </g>
+                    
+                    <!-- Sharp foreground traces -->
+                    <path d="M-50,200 L150,200 L250,300 L400,300 L450,250 L600,250" />
+                    <circle cx="600" cy="250" r="4" fill="#1a202c" />
+                    <circle cx="150" cy="200" r="3" fill="#1a202c" />
+                    
+                    <path d="M100,-50 L100,150 L200,250 L200,450 L300,550 L500,550" />
+                    <circle cx="500" cy="550" r="5" fill="#1a202c" />
+                    
+                    <path d="M800,-50 L800,100 L700,200 L700,400 L850,550 L1000,550" />
+                    <circle cx="700" cy="200" r="4" fill="#1a202c" />
+                    
+                    <path d="M1100,200 L900,200 L850,150 L750,150" />
+                    
+                    <path d="M300,800 L300,600 L400,500 L600,500 L650,450 L800,450" />
+                    
+                    <path d="M400,50 L450,100 L550,100 L600,50 L800,50" />
+                    
+                    <path d="M-50,400 L50,400 L150,300 L250,300 L350,400 L500,400" />
+                    <circle cx="500" cy="400" r="4" fill="#1a202c" />
+                    <path d="M600,100 L700,100 L750,150 L950,150 L1050,50 L1150,50" />
+                    <path d="M200,650 L200,550 L150,500 L50,500" />
+                    <circle cx="50" cy="500" r="4" fill="#1a202c" />
+                    <path d="M900,650 L900,500 L800,400 L800,300 L850,250" />
+                </g>
+
+                <!-- Microchips & Components -->
+                <g stroke="#0f131a" stroke-width="1" fill="#0b0e14" filter="url(#depth-blur)">
+                    <rect x="400" y="240" width="40" height="40" rx="2" />
+                    <path d="M395,245 L400,245 M395,255 L400,255 M395,265 L400,265 M395,275 L400,275" stroke="#2a303c" stroke-width="2"/>
+                    <path d="M440,245 L445,245 M440,255 L445,255 M440,265 L445,265 M440,275 L445,275" stroke="#2a303c" stroke-width="2"/>
+                    
+                    <rect x="680" y="380" width="60" height="60" rx="3" />
+                    <path d="M685,375 L685,380 M695,375 L695,380 M705,375 L705,380 M715,375 L715,380 M725,375 L725,380 M735,375 L735,380" stroke="#2a303c" stroke-width="2"/>
+                    <path d="M685,440 L685,445 M695,440 L695,445 M705,440 L705,445 M715,440 L715,445 M725,440 L725,445 M735,440 L735,445" stroke="#2a303c" stroke-width="2"/>
+                </g>
+
+                <!-- Lit Traces (Electricity) -->
+                <g stroke="#a4e6ff" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow-intense)">
+                    <path d="M-50,200 L150,200 L250,300 L400,300 L450,250 L600,250" class="circuit-elec-1" />
+                    <path d="M100,-50 L100,150 L200,250 L200,450 L300,550 L500,550" class="circuit-elec-2" />
+                    <path d="M800,-50 L800,100 L700,200 L700,400 L850,550 L1000,550" class="circuit-elec-3" />
+                    <path d="M1100,200 L900,200 L850,150 L750,150" class="circuit-elec-4" />
+                    <path d="M300,800 L300,600 L400,500 L600,500 L650,450 L800,450" class="circuit-elec-5" />
+                    <path d="M400,50 L450,100 L550,100 L600,50 L800,50" class="circuit-elec-6" />
+                    <path d="M-50,400 L50,400 L150,300 L250,300 L350,400 L500,400" class="circuit-elec-7" />
+                    <path d="M600,100 L700,100 L750,150 L950,150 L1050,50 L1150,50" class="circuit-elec-8" />
+                    <path d="M200,650 L200,550 L150,500 L50,500" class="circuit-elec-9" />
+                    <path d="M900,650 L900,500 L800,400 L800,300 L850,250" class="circuit-elec-10" />
+                </g>
+            </svg>
+            
+            <!-- Vignette for photorealistic lighting -->
+            <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,transparent_0%,#131313_100%)] opacity-90"></div>
+        </div>
+
+        <section
+            class="w-full px-6 md:px-16 lg:px-24 2xl:px-32 py-16 grid grid-cols-1 md:grid-cols-2 gap-12 border-t border-outline-variant/10 fade-in-section">
+            <div class="md:col-span-1 border-l-2 border-primary pl-8">
+                <div class="type-stat">8<span class="text-accent">+</span></div>
+                <div class="type-label mt-2">Projects Engineered</div>
+            </div>
+            <div class="md:col-span-1 border-l-2 border-primary pl-8">
+                <div class="type-stat">1</div>
+                <div class="type-label mt-2">Live Project Hosted</div>
+            </div>
+        </section><section id="stack" class="py-8 bg-surface-container-low border-t border-outline-variant/10">
+            <div class="pt-12 pb-24 px-6 md:px-16 lg:px-24 2xl:px-32 w-full">
+                <!-- Navigation Breadcrumb Simulation -->
+                <div class="flex items-center gap-2 font-mono text-[11px] text-muted mb-8 tracking-wider uppercase fade-in-section">
+                    <span class="text-accent">~/root</span>
+                    <span>/</span>
+                    <span class="text-primary-container">capabilities</span>
+                    <span>/</span>
+                    <span class="text-white">stack_manifest</span>
+                </div>
+
+                <header class="grid grid-cols-1 md:grid-cols-12 gap-8 mb-16 items-end fade-in-section">
+                    <div class="md:col-span-8">
+                        <h2 class="type-title-xl leading-[0.9]">
+                            SYSTEM<br />
+                            <span class="text-accent">CAPABILITIES</span>
+                        </h2>
+                    </div>
+                    <div class="md:col-span-4 flex flex-col items-end text-right">
+                        <span class="type-label-accent mb-4 block">CORE OVERVIEW</span>
+                        <p class="type-body-sm max-w-xs">
+                            A highly balanced, high-performance assembly of programming paradigms, specialized databases, and modern orchestrators.
+                        </p>
+                    </div>
+                </header>
+
+                <!-- Part 1: Interactive Motherboard Diagnostics & Environmental Parameters -->
+                <div class="mb-12 fade-in-section">
+                    <div class="bg-[#101014] border border-outline-variant/15 rounded-2xl overflow-hidden shadow-2xl">
+                        <!-- Terminal Header -->
+                        <div class="flex justify-between items-center bg-[#0a0a0c] border-b border-outline-variant/10 px-6 py-4">
+                            <div class="flex gap-2">
+                                <span class="w-3 h-3 rounded-full bg-[#ff5f56]"></span>
+                                <span class="w-3 h-3 rounded-full bg-[#ffbd2e]"></span>
+                                <span class="w-3 h-3 rounded-full bg-[#27c93f]"></span>
+                            </div>
+                            <span class="font-mono text-[11px] text-muted">terminal — yj@engine:~$ neofetch --profile caps</span>
+                            <span class="w-4 h-4"></span>
+                        </div>
+
+                        <!-- Terminal Body -->
+                        <div class="p-6 md:p-10 font-mono text-sm grid grid-cols-1 lg:grid-cols-12 gap-8 bg-surface-container-lowest">
+                            <!-- Left: ASCII & Profile Specs -->
+                            <div class="lg:col-span-5 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-outline-variant/10 pb-6 lg:pb-0 lg:pr-8">
+                                <div class="text-[#a4e6ff] text-[12px] leading-tight mb-6">
+                                    <pre class="font-mono">
+██╗   ██╗██╗   ██╗ ██████╗ 
+╚██╗ ██╔╝██║   ██║██╔════╝ 
+ ╚████╔╝ ██║   ██║██║  ███╗
+  ╚██╔╝  ██║   ██║██║   ██║
+   ██║   ╚██████╔╝╚██████╔╝
+   ╚═╝    ╚═════╝  ╚═════╝ </pre>
+                                </div>
+                                <div class="space-y-3">
+                                    <div class="flex justify-between border-b border-outline-variant/5 pb-2">
+                                        <span class="text-accent">OS:</span>
+                                        <span class="text-on-surface">Precision Matte-Engine v2026</span>
+                                    </div>
+                                    <div class="flex justify-between border-b border-outline-variant/5 pb-2">
+                                        <span class="text-accent">Host:</span>
+                                        <span class="text-on-surface">Yug Joshi Studio Framework</span>
+                                    </div>
+                                    <div class="flex justify-between border-b border-outline-variant/5 pb-2">
+                                        <span class="text-accent">Uptime:</span>
+                                        <span class="text-gold">Continuous Growth Mode</span>
+                                    </div>
+                                    <div class="flex justify-between border-b border-outline-variant/5 pb-2">
+                                        <span class="text-accent">Resolution:</span>
+                                        <span class="text-on-surface">Responsive Grid 12-Col</span>
+                                    </div>
+                                    <div class="flex justify-between border-b border-outline-variant/5 pb-2">
+                                        <span class="text-accent">Shell:</span>
+                                        <span class="text-on-surface">zsh / flutter-engine</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Right: Performance Vectors -->
+                            <div class="lg:col-span-7 flex flex-col justify-between">
+                                <div>
+                                    <h4 class="text-accent font-headline font-bold text-base mb-6 tracking-wide uppercase">Core Architecture Health</h4>
+                                    
+                                    <div class="space-y-6">
+                                        <!-- Vector 1: Scalability -->
+                                        <div>
+                                            <div class="flex justify-between text-xs mb-2">
+                                                <span class="text-on-surface font-semibold">Modular Scalability</span>
+                                                <span class="text-accent">96%</span>
+                                            </div>
+                                            <div class="h-2 bg-[#1b1c22] rounded-full overflow-hidden">
+                                                <div class="h-full bg-accent rounded-full" style="width: 96%"></div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Vector 2: Modular Architecture -->
+                                        <div>
+                                            <div class="flex justify-between text-xs mb-2">
+                                                <span class="text-on-surface font-semibold">Clean Code &amp; SOLID Principles</span>
+                                                <span class="text-accent">92%</span>
+                                            </div>
+                                            <div class="h-2 bg-[#1b1c22] rounded-full overflow-hidden">
+                                                <div class="h-full bg-accent rounded-full" style="width: 92%"></div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Vector 3: Responsiveness -->
+                                        <div>
+                                            <div class="flex justify-between text-xs mb-2">
+                                                <span class="text-on-surface font-semibold">Render Performance (FPS)</span>
+                                                <span class="text-gold">99% (GPU Optimized)</span>
+                                            </div>
+                                            <div class="h-2 bg-[#1b1c22] rounded-full overflow-hidden">
+                                                <div class="h-full bg-gold rounded-full" style="width: 99%"></div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Vector 4: Cross-Platform -->
+                                        <div>
+                                            <div class="flex justify-between text-xs mb-2">
+                                                <span class="text-on-surface font-semibold">Asynchronous State Management</span>
+                                                <span class="text-accent">95%</span>
+                                            </div>
+                                            <div class="h-2 bg-[#1b1c22] rounded-full overflow-hidden">
+                                                <div class="h-full bg-accent rounded-full" style="width: 95%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="mt-8 font-mono text-xs border border-outline-variant/15 rounded-xl bg-black/40 p-4 relative shadow-inner">
+                                    <div class="flex items-center justify-between text-accent font-semibold mb-3 border-b border-outline-variant/5 pb-2">
+                                        <div class="flex items-center gap-2">
+                                            <span class="material-symbols-outlined text-sm text-accent">terminal</span>
+                                            <span>yj_engine_shell ~ v1.0.0</span>
+                                        </div>
+                                        <span class="text-[10px] text-muted tracking-wider">type 'help' for command list</span>
+                                    </div>
+                                    <div id="cli-history" class="space-y-1 max-h-[110px] overflow-y-auto mb-3 text-on-surface-variant/80 custom-scrollbar pr-2 leading-relaxed">
+                                        <div class="text-muted">> Connection established. Welcome, visitor.</div>
+                                    </div>
+                                    <div class="flex items-center gap-1.5 text-[#27c93f]">
+                                        <span class="shrink-0 select-none">visitor@yj-engine:~$</span>
+                                        <input type="text" id="cli-input" class="bg-transparent border-none outline-none focus:outline-none w-full text-on-surface text-xs font-mono p-0 m-0" autocomplete="off" placeholder="try 'help' or 'neofetch'..." aria-label="Terminal CLI input">
+                                    </div>
+                                </div>
+                                
+                                <div class="mt-8 pt-6 border-t border-outline-variant/10 flex items-center justify-between text-xs text-muted">
+                                    <div class="flex items-center gap-2">
+                                        <span class="inline-block w-2.5 h-2.5 rounded-full bg-[#27c93f] animate-ping"></span>
+                                        <span>STATUS: SYSTEM OPERATING AT maximum efficiency</span>
+                                    </div>
+                                    <span>v1.2.0</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Part 2: Bento Asymmetric Technologies Layout -->
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-6 fade-in-section mb-12">
+                    
+                    <!-- 1. Frontend Core (6 Columns) -->
+                    <div class="md:col-span-6 bg-surface-container rounded-2xl p-8 md:p-10 relative overflow-hidden border border-outline-variant/10 shadow-lg card-hover">
+                        <div class="absolute top-0 right-0 p-8 opacity-5">
+                            <span class="material-symbols-outlined text-[120px]" style="font-variation-settings: 'FILL' 1;">terminal</span>
+                        </div>
+                        <div class="relative z-10 flex flex-col justify-between h-full">
+                            <div>
+                                <div class="flex items-center gap-3 mb-8">
+                                    <span class="material-symbols-outlined text-accent text-2xl">layers</span>
+                                    <h3 class="type-title-md">01_CORE / FRONTEND</h3>
+                                </div>
+                                
+                                <div class="space-y-6">
+                                    <div class="flex items-start justify-between gap-4 border-b border-outline-variant/10 pb-4">
+                                        <div>
+                                            <h4 class="font-headline font-bold text-accent mb-1">React &amp; Next.js</h4>
+                                            <p class="type-body-sm">Declarative component state trees, SPAs, and responsive fluid UI.</p>
+                                        </div>
+                                        <span class="bg-secondary-container/20 text-on-secondary-container text-[10px] font-mono uppercase tracking-widest px-2.5 py-1 rounded">Adept</span>
+                                    </div>
+                                    
+                                    <div class="flex items-start justify-between gap-4 border-b border-outline-variant/10 pb-4">
+                                        <div>
+                                            <h4 class="font-headline font-bold text-accent mb-1">Flutter &amp; Dart</h4>
+                                            <p class="type-body-sm">Cross-platform layout compilation, hybrid engines, and custom canvas drawing.</p>
+                                        </div>
+                                        <span class="bg-secondary-container/20 text-on-secondary-container text-[10px] font-mono uppercase tracking-widest px-2.5 py-1 rounded">Advanced</span>
+                                    </div>
+                                    
+                                    <div class="flex items-start justify-between gap-4">
+                                        <div>
+                                            <h4 class="font-headline font-bold text-accent mb-1">Modern JS/TS &amp; HTML5/CSS3</h4>
+                                            <p class="type-body-sm">Highly optimized DOM logic, Tailwind CSS configurations, and vanilla layout systems.</p>
+                                        </div>
+                                        <span class="bg-secondary-container/20 text-on-secondary-container text-[10px] font-mono uppercase tracking-widest px-2.5 py-1 rounded">Adept</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2. Backend & API Core (6 Columns) -->
+                    <div class="md:col-span-6 bg-surface-container rounded-2xl p-8 md:p-10 relative overflow-hidden border border-outline-variant/10 shadow-lg card-hover">
+                        <div class="absolute top-0 right-0 p-8 opacity-5">
+                            <span class="material-symbols-outlined text-[120px]" style="font-variation-settings: 'FILL' 1;">dns</span>
+                        </div>
+                        <div class="relative z-10 flex flex-col justify-between h-full">
+                            <div>
+                                <div class="flex items-center gap-3 mb-8">
+                                    <span class="material-symbols-outlined text-accent text-2xl">database</span>
+                                    <h3 class="type-title-md">02_ENGINE / BACKEND</h3>
+                                </div>
+                                
+                                <div class="space-y-6">
+                                    <div class="flex items-start justify-between gap-4 border-b border-outline-variant/10 pb-4">
+                                        <div>
+                                            <h4 class="font-headline font-bold text-accent mb-1">Node.js &amp; Express</h4>
+                                            <p class="type-body-sm">Asynchronous event loops, REST API routes, custom middlewares, and secure JWT auth systems.</p>
+                                        </div>
+                                        <span class="bg-secondary-container/20 text-on-secondary-container text-[10px] font-mono uppercase tracking-widest px-2.5 py-1 rounded">Adept</span>
+                                    </div>
+                                    
+                                    <div class="flex items-start justify-between gap-4 border-b border-outline-variant/10 pb-4">
+                                        <div>
+                                            <h4 class="font-headline font-bold text-accent mb-1">Python &amp; Django</h4>
+                                            <p class="type-body-sm">Scripting automation, database migrations, model layers, and modular server controllers.</p>
+                                        </div>
+                                        <span class="bg-secondary-container/20 text-on-secondary-container text-[10px] font-mono uppercase tracking-widest px-2.5 py-1 rounded">Advanced</span>
+                                    </div>
+                                    
+                                    <div class="flex items-start justify-between gap-4">
+                                        <div>
+                                            <h4 class="font-headline font-bold text-accent mb-1">API Integrations &amp; WebSockets</h4>
+                                            <p class="type-body-sm">Third-party payment nodes, bi-directional socket connections, and real-time state broadcasts.</p>
+                                        </div>
+                                        <span class="bg-secondary-container/20 text-on-secondary-container text-[10px] font-mono uppercase tracking-widest px-2.5 py-1 rounded">Adept</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3. Databases (4 Columns) -->
+                    <div class="md:col-span-4 bg-surface-container rounded-2xl p-8 md:p-10 border border-outline-variant/10 shadow-lg card-hover flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center gap-3 mb-8">
+                                <span class="material-symbols-outlined text-accent text-2xl">dns</span>
+                                <h3 class="type-title-md">03_VAULT / DATA</h3>
+                            </div>
+                            <p class="type-body-sm mb-8 leading-relaxed">
+                                Designing schema configurations for secure data hydration, high-availability replication, and low-latency queries.
+                            </p>
+                            
+                            <div class="space-y-4">
+                                <div class="p-4 bg-surface-container-lowest rounded-xl border-l-2 border-primary">
+                                    <h4 class="font-headline font-bold text-sm text-on-surface mb-1">MongoDB</h4>
+                                    <p class="text-[12px] text-muted">NoSQL document schemas &amp; aggregation pipelines.</p>
+                                </div>
+                                <div class="p-4 bg-surface-container-lowest rounded-xl border-l-2 border-primary">
+                                    <h4 class="font-headline font-bold text-sm text-on-surface mb-1">Supabase &amp; SQL</h4>
+                                    <p class="text-[12px] text-muted">PostgreSQL row-level security, functions, and relational integrity.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 4. DevOps & Systems (8 Columns) -->
+                    <div class="md:col-span-8 bg-surface-container rounded-2xl p-8 md:p-10 border border-outline-variant/10 shadow-lg card-hover flex flex-col justify-between relative overflow-hidden">
+                        <div class="absolute -right-16 -bottom-16 p-8 opacity-5">
+                            <span class="material-symbols-outlined text-[200px]" style="font-variation-settings: 'FILL' 1;">terminal</span>
+                        </div>
+                        <div class="relative z-10">
+                            <div class="flex items-center gap-3 mb-8">
+                                <span class="material-symbols-outlined text-accent text-2xl">developer_board</span>
+                                <h3 class="type-title-md">04_ORBIT / INFRASTRUCTURE</h3>
+                            </div>
+                            <p class="type-body-sm mb-8 max-w-xl">
+                                Establishing continuous integration loops, isolated runtime containers, and cloud environments that ensure maximum project availability.
+                            </p>
+                            
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                                <div class="p-5 bg-surface-container-lowest rounded-xl border border-outline-variant/10">
+                                    <h4 class="font-headline font-bold text-accent mb-2">Docker</h4>
+                                    <p class="type-body-sm text-[12px]">Containerized environments, image packaging, and secure localized runtime dependencies.</p>
+                                </div>
+                                <div class="p-5 bg-surface-container-lowest rounded-xl border border-outline-variant/10">
+                                    <h4 class="font-headline font-bold text-accent mb-2">Git &amp; CI/CD</h4>
+                                    <p class="type-body-sm text-[12px]">GitHub Actions workflows, modular code branching, lint verification, and automatic test hooks.</p>
+                                </div>
+                                <div class="p-5 bg-surface-container-lowest rounded-xl border border-outline-variant/10">
+                                    <h4 class="font-headline font-bold text-accent mb-2">Cloud Networks</h4>
+                                    <p class="type-body-sm text-[12px]">Deploying secure configurations across AWS, Render server pipelines, and Supabase serverless environments.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Part 3: Engineering Principles Terminal (htop style) -->
+                <div class="fade-in-section">
+                    <div class="bg-[#101014] border border-outline-variant/15 rounded-2xl overflow-hidden shadow-2xl">
+                        <!-- Header -->
+                        <div class="flex justify-between items-center bg-[#0a0a0c] border-b border-outline-variant/10 px-6 py-4">
+                            <div class="flex gap-2">
+                                <span class="w-3 h-3 rounded-full bg-[#ff5f56]"></span>
+                                <span class="w-3 h-3 rounded-full bg-[#ffbd2e]"></span>
+                                <span class="w-3 h-3 rounded-full bg-[#27c93f]"></span>
+                            </div>
+                            <span class="font-mono text-[11px] text-muted">htop — yj@processes:~$ ps aux --sort=-%cpu</span>
+                            <div class="flex items-center gap-1.5 font-mono text-[10px] text-accent">
+                                <span class="inline-block w-2 h-2 rounded-full bg-accent animate-pulse"></span>
+                                <span>5 ACTIVE PROCESSES</span>
+                            </div>
+                        </div>
+
+                        <!-- Process Table -->
+                        <div class="p-6 md:p-8 overflow-x-auto bg-surface-container-lowest">
+                            <table class="w-full font-mono text-xs md:text-sm text-left border-collapse">
+                                <thead>
+                                    <tr class="text-accent border-b border-outline-variant/10 pb-4">
+                                        <th class="pb-3 font-semibold uppercase tracking-wider">USER</th>
+                                        <th class="pb-3 font-semibold uppercase tracking-wider">PID</th>
+                                        <th class="pb-3 font-semibold uppercase tracking-wider">%CPU</th>
+                                        <th class="pb-3 font-semibold uppercase tracking-wider">%MEM</th>
+                                        <th class="pb-3 font-semibold uppercase tracking-wider">COMMAND</th>
+                                        <th class="pb-3 font-semibold uppercase tracking-wider text-right">STATUS</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-outline-variant/5">
+                                    <tr class="hover:bg-[#15161b]/50 transition-colors">
+                                        <td class="py-4 text-[#8ba3b2]">yj_admin</td>
+                                        <td class="py-4 text-muted">2048</td>
+                                        <td class="py-4 text-accent font-semibold">98.2</td>
+                                        <td class="py-4 text-muted">12.4</td>
+                                        <td class="py-4">
+                                            <span class="text-on-surface font-semibold">./architecture --dry --clean</span>
+                                            <span class="block text-[11px] text-muted mt-1">Enforcing highly modular folders, single responsibility classes, and zero global dependencies.</span>
+                                        </td>
+                                        <td class="py-4 text-right"><span class="bg-[#27c93f]/10 text-[#27c93f] px-2.5 py-1 rounded text-[10px] uppercase font-bold tracking-wider">ENFORCED</span></td>
+                                    </tr>
+                                    <tr class="hover:bg-[#15161b]/50 transition-colors">
+                                        <td class="py-4 text-[#8ba3b2]">yj_tester</td>
+                                        <td class="py-4 text-muted">1024</td>
+                                        <td class="py-4 text-accent font-semibold">95.4</td>
+                                        <td class="py-4 text-muted">8.2</td>
+                                        <td class="py-4">
+                                            <span class="text-on-surface font-semibold">./pipeline --test-driven-development</span>
+                                            <span class="block text-[11px] text-muted mt-1">Applying test suites first, ensuring rigorous modular bounds and regression-free upgrades.</span>
+                                        </td>
+                                        <td class="py-4 text-right"><span class="bg-[#27c93f]/10 text-[#27c93f] px-2.5 py-1 rounded text-[10px] uppercase font-bold tracking-wider">ACTIVE</span></td>
+                                    </tr>
+                                    <tr class="hover:bg-[#15161b]/50 transition-colors">
+                                        <td class="py-4 text-[#8ba3b2]">yj_perf</td>
+                                        <td class="py-4 text-muted">4096</td>
+                                        <td class="py-4 text-accent font-semibold">91.8</td>
+                                        <td class="py-4 text-muted">15.1</td>
+                                        <td class="py-4">
+                                            <span class="text-on-surface font-semibold">./optimizer --render --gpu-accelerate</span>
+                                            <span class="block text-[11px] text-muted mt-1">Eliminating heavy repaints, profiling main thread events, and targeting high framerates.</span>
+                                        </td>
+                                        <td class="py-4 text-right"><span class="bg-[#27c93f]/10 text-[#27c93f] px-2.5 py-1 rounded text-[10px] uppercase font-bold tracking-wider">OPTIMIZED</span></td>
+                                    </tr>
+                                    <tr class="hover:bg-[#15161b]/50 transition-colors">
+                                        <td class="py-4 text-[#8ba3b2]">yj_ux</td>
+                                        <td class="py-4 text-muted">512</td>
+                                        <td class="py-4 text-accent font-semibold">88.5</td>
+                                        <td class="py-4 text-muted">6.3</td>
+                                        <td class="py-4">
+                                            <span class="text-on-surface font-semibold">./a11y --accessible --semantic-dom</span>
+                                            <span class="block text-[11px] text-muted mt-1">Integrating semantic nodes, aria descriptors, focus outlines, and responsive keyboard grids.</span>
+                                        </td>
+                                        <td class="py-4 text-right"><span class="bg-[#27c93f]/10 text-[#27c93f] px-2.5 py-1 rounded text-[10px] uppercase font-bold tracking-wider">COMPLIANT</span></td>
+                                    </tr>
+                                    <tr class="hover:bg-[#15161b]/50 transition-colors">
+                                        <td class="py-4 text-[#8ba3b2]">yj_sync</td>
+                                        <td class="py-4 text-muted">8192</td>
+                                        <td class="py-4 text-accent font-semibold">82.0</td>
+                                        <td class="py-4 text-muted">4.5</td>
+                                        <td class="py-4">
+                                            <span class="text-on-surface font-semibold">./git --branching --version-control</span>
+                                            <span class="block text-[11px] text-muted mt-1">Structuring trunk-based branches, atomic commits, descriptive pull-requests, and code review gates.</span>
+                                        </td>
+                                        <td class="py-4 text-right"><span class="bg-[#27c93f]/10 text-[#27c93f] px-2.5 py-1 rounded text-[10px] uppercase font-bold tracking-wider">STABLE</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="w-full py-12 bg-[#121216] border-t border-outline-variant/10">
+        <div class="flex flex-col md:flex-row justify-between items-center px-6 md:px-16 lg:px-24 2xl:px-32 w-full gap-8">
+            <div class="flex flex-col items-center md:items-start gap-2">
+                <a href="index.html" class="text-[#a4e6ff] font-bold text-xl font-headline hover:opacity-80 transition-opacity flex items-center gap-2">
+                    <svg width="28" height="28" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="100" height="100" rx="20" fill="#131313"/>
+                        <rect width="100" height="100" rx="20" fill="none" stroke="currentColor" stroke-width="6"/>
+                        <text fill="currentColor" font-family="sans-serif" font-weight="900" font-size="50" x="50" y="68" text-anchor="middle">YJ</text>
+                    </svg>
+                    Yug Joshi
+                </a>
+                <p class="text-[#e5e2e1]/60 font-body text-sm">© 2026 Yug Joshi. Built with Precision.</p>
+            </div>
+            <div class="flex gap-8">
+                <a class="text-[#e5e2e1]/60 hover:text-[#a4e6ff] transition-all font-body text-sm"
+                    href="https://github.com/Yug-joshi" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a class="text-[#e5e2e1]/60 hover:text-[#a4e6ff] transition-all font-body text-sm"
+                    href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+
+    <a href="projects.html"
+        class="floating-btn fixed bottom-8 right-8 bg-primary text-on-primary px-6 py-4 rounded-full shadow-[0_10px_30px_rgba(164,230,255,0.3)] z-50 font-bold flex items-center gap-2 hover:scale-105 transition-transform hidden md:flex cursor-pointer">
+        View Projects <span class="material-symbols-outlined text-sm">arrow_upward</span>
+    </a>
+
+    <div class="md:hidden fixed bottom-0 left-0 w-full glass-nav z-50 px-6 py-4 flex justify-around items-center no-print"
+        role="navigation" aria-label="Mobile navigation">
+        <a href="index.html" class="mobile-nav-link flex flex-col items-center gap-1 text-[#e5e2e1]/60 transition-colors">
+            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+            <span class="text-[10px] font-bold">Home</span>
+        </a>
+        <a href="projects.html"
+            class="mobile-nav-link flex flex-col items-center gap-1 text-[#e5e2e1]/60 transition-colors">
+            <span class="material-symbols-outlined">terminal</span>
+            <span class="text-[10px] font-bold">Projects</span>
+        </a>
+        <a href="stack.html" class="mobile-nav-link flex flex-col items-center gap-1 text-[#e5e2e1]/60 transition-colors">
+            <span class="material-symbols-outlined">layers</span>
+            <span class="text-[10px] font-bold">Stack</span>
+        </a>
+        <a href="contact.html" class="mobile-nav-link flex flex-col items-center gap-1 text-[#e5e2e1]/60 transition-colors">
+            <span class="material-symbols-outlined">mail</span>
+            <span class="text-[10px] font-bold">Contact</span>
+        </a>
+    </div>
+
+    <!-- Project Modal Overlay -->
+    <div id="project-modal" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-2 md:p-4">
+        <div class="absolute inset-0 bg-black/90 backdrop-blur-md" id="modal-overlay"></div>
+        <div class="relative w-full max-w-6xl bg-surface-container rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl flex flex-col md:flex-row max-h-[95vh] md:max-h-[90vh]">
+            <button id="close-modal" 
+                class="absolute top-4 right-4 z-50 w-10 h-10 rounded-full bg-black/40 text-on-surface flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all duration-300">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+            
+            <!-- Media Panel -->
+            <div class="w-full md:w-2/3 bg-black flex items-center justify-center relative overflow-hidden h-[45vh] md:h-auto md:min-h-[500px] shrink-0">
+                <div id="modal-media-container" class="w-full h-full flex items-center justify-center">
+                    <!-- Dynamic Media -->
+                </div>
+                
+                <!-- Media Navigation -->
+                <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-4 z-10" id="modal-nav-container">
+                    <button id="modal-prev" class="w-10 h-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center hover:bg-primary transition-all">
+                        <span class="material-symbols-outlined">chevron_left</span>
+                    </button>
+                    <button id="modal-next" class="w-10 h-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center hover:bg-primary transition-all">
+                        <span class="material-symbols-outlined">chevron_right</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Info Panel -->
+            <div class="w-full md:w-1/3 p-6 md:p-12 flex flex-col justify-between overflow-y-auto bg-surface-container border-t md:border-t-0 md:border-l border-outline-variant/10">
+                <div class="mb-8">
+                    <div id="modal-tag" class="inline-block bg-primary/10 text-primary px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-6 border border-primary/20"></div>
+                    <h3 id="modal-title" class="text-3xl font-headline font-extrabold mb-4 tracking-tighter text-on-surface"></h3>
+                    <p id="modal-description" class="text-on-surface-variant text-sm leading-relaxed mb-8"></p>
+                    
+                    <div id="modal-tech-stack" class="flex flex-wrap gap-2">
+                        <!-- Tech Tags -->
+                    </div>
+                </div>
+
+                <div class="flex flex-col gap-3 mt-auto">
+                    <a id="modal-live-link" target="_blank" href="#" class="bg-primary text-on-primary w-full py-4 rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-primary-container transition-all">
+                        Live Experience <span class="material-symbols-outlined text-sm">arrow_outward</span>
+                    </a>
+                    <a id="modal-repo-link" target="_blank" href="#" class="border border-outline-variant/30 text-on-surface w-full py-4 rounded-xl font-bold hover:bg-surface-container-high transition-all flex items-center justify-center gap-2">
+                        View Architecture <span class="material-symbols-outlined text-sm">code</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
+</body>
+
+</html>
