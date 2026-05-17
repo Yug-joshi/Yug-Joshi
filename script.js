@@ -44,6 +44,20 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Disable Tilt on touch/mobile viewports to boost render performance significantly
+    const disableTiltOnMobile = () => {
+        if (touchFeedback.isTouch() || window.innerWidth <= 768) {
+            document.querySelectorAll('[data-tilt]').forEach(el => {
+                el.removeAttribute('data-tilt');
+                if (el.vanillaTilt) {
+                    el.vanillaTilt.destroy();
+                }
+            });
+        }
+    };
+    disableTiltOnMobile();
+    window.addEventListener('load', disableTiltOnMobile);
+
     // Project Data for Modal
     const projectData = {
         'trade-allocation': {
@@ -391,7 +405,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Add input to history
                 const promptRow = document.createElement('div');
                 promptRow.className = 'text-accent font-semibold';
-                promptRow.textContent = `visitor@yj-engine:~$ ${rawVal}`;
+                promptRow.textContent = `guest@creative-studio:~$ ${rawVal}`;
                 cliHistory.appendChild(promptRow);
                 
                 // Process output
@@ -408,13 +422,13 @@ document.addEventListener('DOMContentLoaded', () => {
                     `;
                 } else if (cmd === 'neofetch') {
                     outputContainer.innerHTML = `
-                        <div class="text-accent font-bold">Yug Joshi @ portfolio</div>
+                        <div class="text-accent font-bold">Design @ creative-studio</div>
                         <div class="text-muted/40">--------------------</div>
-                        <div><span class="text-muted">OS:</span> Custom Hardware Kernel v1.2.0</div>
-                        <div><span class="text-muted">Shell:</span> yj_engine_shell 1.0.0</div>
-                        <div><span class="text-muted">Uptime:</span> 2.5 hours</div>
-                        <div><span class="text-muted">Status:</span> System operating at peak efficiency</div>
-                        <div><span class="text-muted">Engine:</span> React / Next.js / Flutter</div>
+                        <div><span class="text-muted">Art Style:</span> Matte Minimalism</div>
+                        <div><span class="text-muted">Typography:</span> Satoshi Sans-Serif</div>
+                        <div><span class="text-muted">Motion:</span> Fluid Spring Dynamics</div>
+                        <div><span class="text-muted">Layout:</span> Asymmetric Golden Grid</div>
+                        <div><span class="text-muted">Interactive:</span> Magnetic Micro-loops</div>
                     `;
                 } else if (cmd === 'skills') {
                     outputContainer.innerHTML = `
@@ -460,7 +474,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Fluctuating HTOP Process Values (Micro-animations) ---
     const cpuCells = document.querySelectorAll('tbody tr td:nth-child(3)');
-    if (cpuCells.length > 0) {
+    if (cpuCells.length > 0 && !touchFeedback.isTouch()) {
         const baseValues = Array.from(cpuCells).map(cell => parseFloat(cell.textContent));
         setInterval(() => {
             cpuCells.forEach((cell, idx) => {
@@ -468,12 +482,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 const variance = (Math.random() * 2 - 1) * 0.4; // fluctuate by +/- 0.4%
                 const newVal = Math.min(100, Math.max(0, base + variance)).toFixed(1);
                 cell.textContent = newVal;
-                
-                // Add fluctuating effect to CPU percentage color
-                cell.style.opacity = '0.9';
-                setTimeout(() => { cell.style.opacity = '1'; }, 150);
             });
-        }, 2500);
+        }, 4000); // Throttled frequency to protect mobile CPU
     }
 
     // --- PORTFOLIO INTERACTIVE NETWORK MESH LOADER ---
@@ -574,5 +584,145 @@ document.addEventListener('DOMContentLoaded', () => {
                 }, 250);
             }, 2800); // 2.8s duration allows the user to experience the dynamic mouse interactivity
         }
+    }
+
+    // Kinetic Geometric Vector Field Canvas Animation
+    const designCanvas = document.getElementById('design-canvas');
+    if (designCanvas) {
+        const ctx = designCanvas.getContext('2d');
+        let width, height;
+        let rx = 0.5, ry = 0.5;
+        let targetRx = 0.5, targetRy = 0.5;
+
+        const resize = () => {
+            const rect = designCanvas.getBoundingClientRect();
+            const dpr = window.devicePixelRatio || 1;
+            width = rect.width || 300;
+            height = rect.height || 180;
+            designCanvas.width = width * dpr;
+            designCanvas.height = height * dpr;
+            ctx.scale(dpr, dpr);
+        };
+
+        // Morphing coordinate calculations on interaction
+        const handleMove = (clientX, clientY) => {
+            const rect = designCanvas.getBoundingClientRect();
+            targetRx = (clientX - rect.left) / rect.width;
+            targetRy = (clientY - rect.top) / rect.height;
+        };
+
+        designCanvas.addEventListener('mousemove', (e) => {
+            handleMove(e.clientX, e.clientY);
+        });
+
+        designCanvas.addEventListener('touchmove', (e) => {
+            if (e.touches.length > 0) {
+                handleMove(e.touches[0].clientX, e.touches[0].clientY);
+            }
+        }, { passive: true });
+
+        const resetCoords = () => {
+            targetRx = 0.5;
+            targetRy = 0.5;
+        };
+
+        designCanvas.addEventListener('mouseleave', resetCoords);
+        designCanvas.addEventListener('touchend', resetCoords);
+
+        window.addEventListener('resize', resize);
+        resize();
+
+        let time = 0;
+        const isTouchDevice = touchFeedback.isTouch();
+        const step1 = isTouchDevice ? 0.05 : 0.015;
+        const step2 = isTouchDevice ? 0.06 : 0.02;
+        const enableShadows = !isTouchDevice;
+
+        const renderLoop = () => {
+            if (!document.getElementById('design-canvas')) return; // stop running loop if route changes
+            
+            ctx.clearRect(0, 0, width, height);
+
+            // Interpolate coordinates for buttery smooth movement
+            rx += (targetRx - rx) * 0.08;
+            ry += (targetRy - ry) * 0.08;
+
+            time += 0.008;
+
+            const centerX = width / 2;
+            const centerY = height / 2;
+            const maxRadius = Math.min(width, height) * 0.4;
+
+            // Generate stunning gradient stroke
+            const grad = ctx.createLinearGradient(0, 0, width, height);
+            grad.addColorStop(0, '#a4e6ff');
+            grad.addColorStop(0.5, '#7f5af0');
+            grad.addColorStop(1, '#ffbd2e');
+            
+            // Outer intricate geometric lattice
+            ctx.beginPath();
+            ctx.strokeStyle = grad;
+            ctx.lineWidth = 1.2;
+            
+            // Dynamic multipliers derived from user coordinate interaction
+            const a = 4 + rx * 5;
+            const b = 3 + ry * 5;
+            
+            for (let t = 0; t <= Math.PI * 2; t += step1) {
+                // High-fidelity mathematically morphing Lissajous shape
+                const x = centerX + Math.sin(a * t + time) * Math.cos(t * 2) * maxRadius;
+                const y = centerY + Math.cos(b * t + Math.sin(time)) * Math.sin(t * 2) * maxRadius;
+                
+                if (t === 0) {
+                    ctx.moveTo(x, y);
+                } else {
+                    ctx.lineTo(x, y);
+                }
+            }
+            ctx.closePath();
+            ctx.stroke();
+
+            // Inner core nested geometric ring with separate phase rotation
+            ctx.beginPath();
+            ctx.strokeStyle = 'rgba(164, 230, 255, 0.25)';
+            ctx.lineWidth = 0.8;
+            
+            const innerRadius = maxRadius * 0.55;
+            const innerA = 2 + ry * 3;
+            const innerB = 3 + rx * 3;
+            
+            for (let t = 0; t <= Math.PI * 2; t += step2) {
+                const x = centerX + Math.sin(innerA * t - time * 1.5) * innerRadius;
+                const y = centerY + Math.cos(innerB * t + time) * innerRadius;
+                
+                if (t === 0) {
+                    ctx.moveTo(x, y);
+                } else {
+                    ctx.lineTo(x, y);
+                }
+            }
+            ctx.closePath();
+            ctx.stroke();
+
+            // Tiny center core node coordinates
+            ctx.beginPath();
+            ctx.fillStyle = '#a4e6ff';
+            if (enableShadows) {
+                ctx.shadowBlur = 10;
+                ctx.shadowColor = '#a4e6ff';
+            }
+            ctx.arc(centerX, centerY, 3, 0, Math.PI * 2);
+            ctx.fill();
+            
+            // Reset shadows for high rendering performance
+            if (enableShadows) {
+                ctx.shadowBlur = 0;
+            }
+
+            requestAnimationFrame(renderLoop);
+        };
+        
+        // Let it run smoothly!
+        renderLoop();
     }
 });

@@ -782,3 +782,25 @@ button:active {
     100% { transform: translate3d(35px, 20px, 0); opacity: 0; }
 }
 
+/* ==========================================
+   MOBILE LAG & PERFORMANCE OPTIMIZATIONS
+   ========================================== */
+@media (max-width: 768px) {
+    /* Disable expensive SVG filters (Gaussian blur filters are extremely rendering intensive) */
+    .circuit-bg-svg g, 
+    .circuit-bg-svg path, 
+    .circuit-bg-svg svg {
+        filter: none !important;
+        will-change: auto !important;
+    }
+
+    /* Stop animated stroke dashes on circuit traces and make them a sleek, high-end static background */
+    .circuit-elec-1, .circuit-elec-2, .circuit-elec-3, .circuit-elec-4, .circuit-elec-5, 
+    .circuit-elec-6, .circuit-elec-7, .circuit-elec-8, .circuit-elec-9, .circuit-elec-10 {
+        animation: none !important;
+        stroke-dashoffset: 0 !important;
+        opacity: 0.15 !important; /* Premium static look */
+        will-change: auto !important;
+    }
+}
+
